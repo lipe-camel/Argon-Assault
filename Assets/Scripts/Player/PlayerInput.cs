@@ -1,21 +1,29 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Player))]
 public class PlayerInput : MonoBehaviour
 {
-    // CACHED REFERENCES
-    Player player;
+    //CONFIG STATS
+    [SerializeField] InputAction movement;
 
-    //STRING REFERENCES
-    const string HORIZONTAL_AXIS = "Horizontal";
-    const string VERTICAL_AXIS = "Vertical";
+    // CACHED REFERENCES
+    Player player;    
+
 
     public void CustomStart()
     {
         player = GetComponent<Player>();
+    }
+
+    private void OnEnable()
+    {
+        movement.Enable();
+    }
+
+    private void OnDisable()
+    {
+        movement.Disable();
     }
 
     void Update()
@@ -23,11 +31,12 @@ public class PlayerInput : MonoBehaviour
         ManageInputs();
     }
 
+
     private void ManageInputs()
     {
-        float xFactor = Input.GetAxis(HORIZONTAL_AXIS);
-        float yFactor = Input.GetAxis(VERTICAL_AXIS);
-
-        player.playerMovement.Move(xFactor, yFactor);
+        float xThrow = movement.ReadValue<Vector2>().x;
+        float yThrow = movement.ReadValue<Vector2>().y;
+        Debug.Log(xThrow + ", " +  yThrow);
+        //player.playerMovement.Move(xThrow, yThrow);
     }
 }

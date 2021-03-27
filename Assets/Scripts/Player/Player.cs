@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerInput))]
@@ -31,11 +29,5 @@ public class Player : MonoBehaviour
     {
         playerInput.CustomStart();
         playerMovement.CustomStart();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
