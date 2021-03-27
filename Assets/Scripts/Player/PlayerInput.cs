@@ -37,6 +37,6 @@ public class PlayerInput : MonoBehaviour
         float xThrow = movement.ReadValue<Vector2>().x;
         float yThrow = movement.ReadValue<Vector2>().y;
         Debug.Log(xThrow + ", " +  yThrow);
-        //player.playerMovement.Move(xThrow, yThrow);
+        player.playerMovement.Move(xThrow, yThrow);
     }
 }

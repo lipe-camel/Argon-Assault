@@ -21,9 +21,9 @@ public class PlayerMovement : MonoBehaviour
         float deltaX = xFactor * Time.deltaTime * movementSpeed;
         float deltaY = yFactor * Time.deltaTime * movementSpeed;
 
-        var newXPos = Mathf.Clamp(player.playerModel.transform.position.x + deltaX, -xValue, xValue);
-        var newYPos = Mathf.Clamp(player.playerModel.transform.position.y + deltaY, -yValue, yValue);
+        var newXPos = Mathf.Clamp(player.playerModel.transform.localPosition.x + deltaX, -xValue, xValue);
+        var newYPos = Mathf.Clamp(player.playerModel.transform.localPosition.y + deltaY, -yValue, yValue);
 
-        player.playerModel.transform.position = new Vector3(player.transform.position.x + newXPos, player.transform.position.y + newYPos);
+        player.playerModel.transform.localPosition = new Vector3(newXPos, newYPos);
     }
 }
