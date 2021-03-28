@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
@@ -22,13 +21,13 @@ public class PlayerMovement : MonoBehaviour
     Player player;
     Transform playerTransform;
 
-    public void CustomStart()
+    internal void CustomStart()
     {
         player = GetComponent<Player>();
         playerTransform = player.playerModel.transform;
     }
 
-    public void ProcessPlayerMovement(float xThrow, float yThrow)
+    internal void ProcessPlayerMovement(float xThrow, float yThrow)
     {
         Move(xThrow, yThrow);
         ProcessRotation(xThrow, yThrow);
@@ -41,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         float newXPos = Mathf.Clamp(playerTransform.localPosition.x + deltaX, -xValue, xValue);
         float newYPos = Mathf.Clamp(playerTransform.localPosition.y + deltaY, -yValue, yValue);
 
-        playerTransform.localPosition = new Vector3(newXPos, newYPos);
+        playerTransform.localPosition = new Vector3(newXPos, newYPos);  
     }
 
     private void ProcessRotation(float xThrow, float yThrow)

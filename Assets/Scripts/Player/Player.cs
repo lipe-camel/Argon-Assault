@@ -2,14 +2,19 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerFire))]
 public class Player : MonoBehaviour
 {
     //INSPECTOR REFERENCES
     [SerializeField] internal GameObject playerModel;
+    [SerializeField] internal ParticleSystem[] lasers;
 
-    //CACHED REFERENCES
+    //CACHED CLASSES REFERENCES
     internal PlayerInput playerInput;
     internal PlayerMovement playerMovement;
+    internal PlayerFire playerFire;
+
+    //CACHED COMPONENT REFERENCES
     internal Rigidbody rigidBody;
 
     void Start()
@@ -22,6 +27,7 @@ public class Player : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         playerMovement = GetComponent<PlayerMovement>();
+        playerFire = GetComponent<PlayerFire>();
         rigidBody = GetComponentInChildren<Rigidbody>();
     }
 
@@ -29,5 +35,6 @@ public class Player : MonoBehaviour
     {
         playerInput.CustomStart();
         playerMovement.CustomStart();
+        playerFire.CustomStart();
     }
 }
