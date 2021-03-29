@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Asteroid))]
-public class AsteroidRandomness : MonoBehaviour
+[RequireComponent(typeof(Obstacle))]
+public class ObstacleRandomness : MonoBehaviour
 {
     //CONFIG PARAMS
     [Header("Rotation")]
@@ -15,20 +15,20 @@ public class AsteroidRandomness : MonoBehaviour
     float rndmPitch, rndmYaw, rndmRoll;
 
     //CACHED CLASSES REFERENCES
-    Asteroid asteroid;
+    Obstacle obstacle;
 
     //CACHED REFERENCES
-    Transform asteroidTransform;
+    Transform obstacleTransform;
 
 
     internal void CustomStart()
     {
-        asteroid = GetComponent<Asteroid>();
-        asteroidTransform = asteroid.asteroidModel.transform;
+        obstacle = GetComponent<Obstacle>();
 
+        SetObstacleModel();
         SetRandomRotationFactor();
         SetInitialRotation();
-        SetAsteroidSize();
+        SetInitialSize();
     }
 
     private void Update()
@@ -36,6 +36,17 @@ public class AsteroidRandomness : MonoBehaviour
         Rotate();
     }
 
+
+    //MODEL
+    private void SetObstacleModel()
+    {
+        Destroy(obstacle.obstacleModel);
+        int randomObstacle = Random.Range(0, obstacle.obstacleOptions.Length);
+        obstacle.obstacleModel = Instantiate(obstacle.obstacleOptions[randomObstacle], obstacle.transform);
+
+        obstacleTransform = obstacle.obstacleModel.transform;
+
+    }
 
     //ROTATION
     private void SetRandomRotationFactor()
@@ -51,20 +62,20 @@ public class AsteroidRandomness : MonoBehaviour
         float rndmY = Random.Range(-initialRotation, initialRotation);
         float rndmZ = Random.Range(-initialRotation, initialRotation);
 
-        asteroidTransform.rotation = Quaternion.Euler(rndmX, rndmY, rndmZ);
+        obstacleTransform.rotation = Quaternion.Euler(rndmX, rndmY, rndmZ);
     }
 
     private void Rotate()
     {
-        asteroidTransform.Rotate(new Vector3(rndmPitch, rndmYaw, rndmRoll), Space.Self);
+        obstacleTransform.Rotate(new Vector3(rndmPitch, rndmYaw, rndmRoll), Space.Self);
     }
 
 
     //SCALE
-    private void SetAsteroidSize()
+    private void SetInitialSize()
     {
         float rndmSize = Random.Range(minSize, maxSize);
 
-        asteroidTransform.localScale = new Vector3(rndmSize, rndmSize, rndmSize);
+        obstacleTransform.localScale = new Vector3(rndmSize, rndmSize, rndmSize);
     }
 }
