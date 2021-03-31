@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerFire))]
+[RequireComponent(typeof(PlayerCollision))]
 public class Player : MonoBehaviour
 {
     //INSPECTOR REFERENCES
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     internal PlayerInput playerInput;
     internal PlayerMovement playerMovement;
     internal PlayerFire playerFire;
+    internal PlayerCollision playerColision;
 
     //CACHED COMPONENT REFERENCES
     internal Rigidbody rigidBody;
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerMovement = GetComponent<PlayerMovement>();
         playerFire = GetComponent<PlayerFire>();
+        playerColision = GetComponent<PlayerCollision>();
         rigidBody = GetComponentInChildren<Rigidbody>();
     }
 
@@ -36,5 +39,6 @@ public class Player : MonoBehaviour
         playerInput.CustomStart();
         playerMovement.CustomStart();
         playerFire.CustomStart();
+        playerColision.CustomStart();
     }
 }

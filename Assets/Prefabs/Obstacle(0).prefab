@@ -90,7 +90,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3187635979593902973}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -141,12 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3dfa1d1cfe1e79428e923116c252b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleOptions:
-  - {fileID: 1056666096333670, guid: f603e71ddc270d54192200e95673e2a6, type: 3}
-  - {fileID: 1822345149752838, guid: 45b62242ff99b0a48a47f713cd6d1687, type: 3}
-  - {fileID: 1724874857677222, guid: 6807a4fbab15c3444aa44ff82bcbe872, type: 3}
-  - {fileID: 1041803199959140, guid: 5f7d5f60379571b4ab916f85aae80a71, type: 3}
-  - {fileID: 1040074329139878, guid: fa8aadfb07ca2034188c69c6f2ab4624, type: 3}
+  obstacleOptions: []
 --- !u!114 &3187635980014072779
 MonoBehaviour:
   m_ObjectHideFlags: 0

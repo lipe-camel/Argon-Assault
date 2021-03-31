@@ -26,6 +26,7 @@ public class ObstacleRandomness : MonoBehaviour
         obstacle = GetComponent<Obstacle>();
 
         SetObstacleModel();
+        obstacleTransform = obstacle.obstacleModel.transform;
         SetRandomRotationFactor();
         SetInitialRotation();
         SetInitialSize();
@@ -40,12 +41,12 @@ public class ObstacleRandomness : MonoBehaviour
     //MODEL
     private void SetObstacleModel()
     {
+        Debug.Log(obstacle.obstacleOptions.Length);
+        if (obstacle.obstacleOptions.Length == 0) { return; }
+
         Destroy(obstacle.obstacleModel);
         int randomObstacle = Random.Range(0, obstacle.obstacleOptions.Length);
         obstacle.obstacleModel = Instantiate(obstacle.obstacleOptions[randomObstacle], obstacle.transform);
-
-        obstacleTransform = obstacle.obstacleModel.transform;
-
     }
 
     //ROTATION
