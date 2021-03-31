@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerModel: {fileID: 2467602088771295442}
+  lasers: []
 --- !u!114 &2466832048957394896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +117,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Movement
       m_Flags: 0
+  fire:
+    m_Name: Fire
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a4112571-ef26-4d19-a573-8a53b7320970
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
 --- !u!114 &2466832048957394897
 MonoBehaviour:
   m_ObjectHideFlags: 0

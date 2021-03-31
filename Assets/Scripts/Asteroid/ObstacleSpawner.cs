@@ -8,7 +8,7 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] float xSpawnLimit = 19f, ySpawnLimit = 12f;
     [SerializeField] float minSpawnDelay = 1f;
     [SerializeField] float maxSpawnDelay = 5f;
-
+    [SerializeField] float gameSpeed = 2f;
     //STATES
     bool spawn = true;
 
@@ -32,5 +32,8 @@ public class ObstacleSpawner : MonoBehaviour
 
         GameObject spawnedObstacle = Instantiate(obstacle, randomPos, transform.rotation);
         spawnedObstacle.transform.parent = transform;
+
+        Rigidbody obstacleRigidbody = spawnedObstacle.GetComponent<Rigidbody>();
+        obstacleRigidbody.velocity = new Vector3(0, 0, -gameSpeed);
     }
 }
