@@ -7,7 +7,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //INSPECTOR REFERENCES
-    [SerializeField] internal GameObject playerModel;
     [SerializeField] internal ParticleSystem[] lasers;
 
     //CACHED CLASSES REFERENCES

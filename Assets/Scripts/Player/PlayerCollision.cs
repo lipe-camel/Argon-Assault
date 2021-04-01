@@ -15,6 +15,6 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Player has collided with " + other.gameObject);
+        //Debug.Log($"{this.name}--collided with--{other.gameObject.transform.parent.name}");
     }
 }

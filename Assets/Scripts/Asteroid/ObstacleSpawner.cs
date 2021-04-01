@@ -9,8 +9,10 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] float minSpawnDelay = 1f;
     [SerializeField] float maxSpawnDelay = 5f;
     [SerializeField] float gameSpeed = 2f;
+
     //STATES
     bool spawn = true;
+    int obstacleCount;
 
 
     private IEnumerator Start()
@@ -20,12 +22,12 @@ public class ObstacleSpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
             SpawnObstacle();
-            //apply -z velocity
         }
     }
 
     private void SpawnObstacle()
     {
+        //INSTANTIATE OBSTACLE IN PARENT GAMEOBJECT
         float rndmX = Random.Range(-xSpawnLimit, xSpawnLimit);
         float rndmY = Random.Range(-ySpawnLimit, ySpawnLimit);
         Vector3 randomPos = new Vector3(rndmX, rndmY, transform.position.z);
@@ -33,6 +35,13 @@ public class ObstacleSpawner : MonoBehaviour
         GameObject spawnedObstacle = Instantiate(obstacle, randomPos, transform.rotation);
         spawnedObstacle.transform.parent = transform;
 
+
+        //RENAME OBSTACLE
+        spawnedObstacle.gameObject.name = $"Obstacle ({obstacleCount})";
+        obstacleCount++;
+
+
+        //APPLY ZED MOVEMENT
         Rigidbody obstacleRigidbody = spawnedObstacle.GetComponent<Rigidbody>();
         obstacleRigidbody.velocity = new Vector3(0, 0, -gameSpeed);
     }

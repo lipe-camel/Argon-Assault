@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(ObstacleRandomness))]
+[RequireComponent(typeof(ObstacleCollision))]
 public class Obstacle : MonoBehaviour
 {
     //CONFIG PARAMS
@@ -9,13 +10,23 @@ public class Obstacle : MonoBehaviour
 
     //CACHED CLASSES REFERENCES
     ObstacleRandomness obstacleRandomness;
+    ObstacleCollision obstacleCollision;
 
     //CACHED COMPONENT REFERENCES
     internal GameObject obstacleModel;
 
-    void Start()
+    private void Start()
     {
         obstacleRandomness = GetComponent<ObstacleRandomness>();
+        obstacleCollision = GetComponent<ObstacleCollision>();
+
         obstacleRandomness.CustomStart();
+        obstacleCollision.CustomStart();
     }
+
+    internal void DestroyThisObstacle()
+    {
+        Destroy(gameObject);
+    }
+
 }

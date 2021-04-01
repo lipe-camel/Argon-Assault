@@ -41,7 +41,6 @@ public class ObstacleRandomness : MonoBehaviour
     //MODEL
     private void SetObstacleModel()
     {
-        Debug.Log(obstacle.obstacleOptions.Length);
         if (obstacle.obstacleOptions.Length == 0)
         {
             InstantiateModel(obstacle.defaultObstacle);

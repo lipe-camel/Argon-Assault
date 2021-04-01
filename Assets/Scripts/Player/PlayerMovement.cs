@@ -19,12 +19,10 @@ public class PlayerMovement : MonoBehaviour
 
     // CACHED REFERENCES
     Player player;
-    Transform playerTransform;
 
     internal void CustomStart()
     {
         player = GetComponent<Player>();
-        playerTransform = player.playerModel.transform;
     }
 
     internal void ProcessPlayerMovement(float xThrow, float yThrow)
@@ -37,18 +35,18 @@ public class PlayerMovement : MonoBehaviour
         float deltaX = xThrow * Time.deltaTime * movementSpeed;
         float deltaY = yThrow * Time.deltaTime * movementSpeed;
 
-        float newXPos = Mathf.Clamp(playerTransform.localPosition.x + deltaX, -xValue, xValue);
-        float newYPos = Mathf.Clamp(playerTransform.localPosition.y + deltaY, -yValue, yValue);
+        float newXPos = Mathf.Clamp(player.transform.localPosition.x + deltaX, -xValue, xValue);
+        float newYPos = Mathf.Clamp(player.transform.localPosition.y + deltaY, -yValue, yValue);
 
-        playerTransform.localPosition = new Vector3(newXPos, newYPos);  
+        player.transform.localPosition = new Vector3(newXPos, newYPos);  
     }
 
     private void ProcessRotation(float xThrow, float yThrow)
     {
-        float pitch = playerTransform.localPosition.y * positionPitchFactor + yThrow * controlPitchFactor;
-        float yaw =   playerTransform.localPosition.x * positionYawFactor;
-        float roll = xThrow * controlRollFactor;
+        float pitch = player.transform.localPosition.y * positionPitchFactor + yThrow * controlPitchFactor;
+        float yaw =   player.transform.localPosition.x * positionYawFactor;
+        float roll =  xThrow * controlRollFactor;
 
-        playerTransform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+        player.transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
 }
