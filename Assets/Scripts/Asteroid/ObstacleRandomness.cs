@@ -42,12 +42,23 @@ public class ObstacleRandomness : MonoBehaviour
     private void SetObstacleModel()
     {
         Debug.Log(obstacle.obstacleOptions.Length);
-        if (obstacle.obstacleOptions.Length == 0) { return; }
-
-        Destroy(obstacle.obstacleModel);
-        int randomObstacle = Random.Range(0, obstacle.obstacleOptions.Length);
-        obstacle.obstacleModel = Instantiate(obstacle.obstacleOptions[randomObstacle], obstacle.transform);
+        if (obstacle.obstacleOptions.Length == 0)
+        {
+            InstantiateModel(obstacle.defaultObstacle);
+        }
+        else
+        {
+            var randomObstacle = obstacle.obstacleOptions[Random.Range(0, obstacle.obstacleOptions.Length)];
+            InstantiateModel(randomObstacle);
+        }
     }
+
+    private void InstantiateModel(GameObject obstacleModel)
+    {
+        obstacle.obstacleModel = Instantiate(obstacle.defaultObstacle, obstacle.transform); ;
+        obstacle.obstacleModel.transform.parent = transform;
+    }
+
 
     //ROTATION
     private void SetRandomRotationFactor()

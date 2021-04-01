@@ -5,6 +5,7 @@ public class Obstacle : MonoBehaviour
 {
     //CONFIG PARAMS
     [SerializeField] internal GameObject[] obstacleOptions;
+    [SerializeField] internal GameObject defaultObstacle;
 
     //CACHED CLASSES REFERENCES
     ObstacleRandomness obstacleRandomness;
@@ -15,7 +16,6 @@ public class Obstacle : MonoBehaviour
     void Start()
     {
         obstacleRandomness = GetComponent<ObstacleRandomness>();
-        obstacleModel = GetComponentInChildren<MeshRenderer>().gameObject;
         obstacleRandomness.CustomStart();
     }
 }
