@@ -5,17 +5,26 @@ public class PlayerMovement : MonoBehaviour
 {
     //CONFIG STATS
     [Header("Screen Movement")]
-    [SerializeField] float xValue;
-    [SerializeField] float yValue;
+    [SerializeField] [Tooltip("The horizontal limit value that the player is allowed to move")]
+    float xValue;
+    [SerializeField] [Tooltip("The vertical limit value that the player is allowed to move")]
+    float yValue;
+
     [Header("Movement")]
-    [SerializeField] float movementSpeed = 85f;
+    [SerializeField] [Tooltip("The speed of the player")]
+    float movementSpeed = 85f;
 
     [Header("Screen Rotation Correction")]
-    [SerializeField] float positionPitchFactor = -2f;
-    [SerializeField] float positionYawFactor = 1.5f;
+    [SerializeField] [Tooltip("How much the player will rotate in the x axis to pass the illusion of perspective")]
+    float positionPitchFactor = -2f;
+    [SerializeField] [Tooltip("How much the player will rotate in the y axis to pass the illusion of perspective")]
+    float positionYawFactor = 1.5f;
+
     [Header("Rotation")]
-    [SerializeField] float controlPitchFactor = -10f;
-    [SerializeField] float controlRollFactor = -10f;
+    [SerializeField] [Tooltip("How much the player will rotate in the x axis to have a more dynamic movement")]
+    float controlPitchFactor = -10f;
+    [SerializeField] [Tooltip("How much the player will rotate in the z axis to have a more dynamic movement")] 
+    float controlRollFactor = -10f;
 
     // CACHED REFERENCES
     Player player;

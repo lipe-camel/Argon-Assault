@@ -5,8 +5,11 @@ public class ObstacleRandomness : MonoBehaviour
 {
     //CONFIG PARAMS
     [Header("Rotation")]
-    [SerializeField] float rotationFactor = 5f;
-    [SerializeField] float initialRotation = 15f;
+    [SerializeField] [Tooltip("How much the object will rotate per second")]
+    float rotationFactor = 5f;
+    [SerializeField] [Tooltip("How much the object can be rotated at the start")] 
+    float initialRotation = 15f;
+
     [Header("Scale")]
     [SerializeField] float minSize = 1;
     [SerializeField] float maxSize = 5f;
@@ -60,13 +63,6 @@ public class ObstacleRandomness : MonoBehaviour
 
 
     //ROTATION
-    private void SetRandomRotationFactor()
-    {
-        rndmPitch = Random.Range(-rotationFactor, rotationFactor);
-        rndmYaw = Random.Range(-rotationFactor, rotationFactor);
-        rndmRoll = Random.Range(-rotationFactor, rotationFactor);
-    }
-
     private void SetInitialRotation()
     {
         float rndmX = Random.Range(-initialRotation, initialRotation);
@@ -74,6 +70,14 @@ public class ObstacleRandomness : MonoBehaviour
         float rndmZ = Random.Range(-initialRotation, initialRotation);
 
         obstacleTransform.rotation = Quaternion.Euler(rndmX, rndmY, rndmZ);
+    }
+
+    //this sets the rotation to be used in the rotation update
+    private void SetRandomRotationFactor()
+    {
+        rndmPitch = Random.Range(-rotationFactor, rotationFactor);
+        rndmYaw = Random.Range(-rotationFactor, rotationFactor);
+        rndmRoll = Random.Range(-rotationFactor, rotationFactor);
     }
 
     private void Rotate()

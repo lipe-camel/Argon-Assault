@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 3187635980014072778}
   - component: {fileID: 3187635980014072788}
   - component: {fileID: 3187635980014072779}
-  - component: {fileID: 1831886197}
+  - component: {fileID: 1157073490}
+  - component: {fileID: 1157073486}
   m_Layer: 0
   m_Name: Obstacle(0)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -64,7 +65,7 @@ MonoBehaviour:
   initialRotation: 180
   minSize: 1
   maxSize: 2
---- !u!54 &1831886197
+--- !u!54 &1157073490
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,3 +81,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1157073486
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3187635980014072777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1
+  m_Center: {x: 0, y: 0, z: 0}
