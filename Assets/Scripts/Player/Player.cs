@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerFire))]
 [RequireComponent(typeof(PlayerCollision))]
+[RequireComponent(typeof(PlayerHealth))]
 public class Player : MonoBehaviour
 {
     //INSPECTOR REFERENCES
@@ -14,9 +15,13 @@ public class Player : MonoBehaviour
     internal PlayerMovement playerMovement;
     internal PlayerFire playerFire;
     internal PlayerCollision playerColision;
+    internal PlayerHealth playerHealth;
 
     //CACHED COMPONENT REFERENCES
     internal Rigidbody rigidBody;
+
+    //CACHED EXTERNAL REFERENCES
+    internal SceneLoader sceneLoader;
 
     void Start()
     {
@@ -30,7 +35,10 @@ public class Player : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerFire = GetComponent<PlayerFire>();
         playerColision = GetComponent<PlayerCollision>();
+        playerHealth = GetComponent<PlayerHealth>();
+
         rigidBody = GetComponentInChildren<Rigidbody>();
+        sceneLoader = FindObjectOfType<SceneLoader>();
     }
 
     private void StartCustomStarts()
@@ -39,5 +47,6 @@ public class Player : MonoBehaviour
         playerMovement.CustomStart();
         playerFire.CustomStart();
         playerColision.CustomStart();
+        playerHealth.CustomStart();
     }
 }

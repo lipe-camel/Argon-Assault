@@ -29,7 +29,6 @@ public class ObstacleRandomness : MonoBehaviour
         obstacle = GetComponent<Obstacle>();
 
         SetObstacleModel();
-        obstacleTransform = obstacle.obstacleModel.transform;
         SetRandomRotationFactor();
         SetInitialRotation();
         SetInitialSize();
@@ -63,13 +62,15 @@ public class ObstacleRandomness : MonoBehaviour
 
 
     //ROTATION
+    //this sets the rotation to be used when summoned
     private void SetInitialRotation()
     {
         float rndmX = Random.Range(-initialRotation, initialRotation);
         float rndmY = Random.Range(-initialRotation, initialRotation);
         float rndmZ = Random.Range(-initialRotation, initialRotation);
 
-        obstacleTransform.rotation = Quaternion.Euler(rndmX, rndmY, rndmZ);
+        obstacle.obstacleModel.transform.rotation =
+            Quaternion.Euler(rndmX, rndmY, rndmZ);
     }
 
     //this sets the rotation to be used in the rotation update
@@ -82,7 +83,8 @@ public class ObstacleRandomness : MonoBehaviour
 
     private void Rotate()
     {
-        obstacleTransform.Rotate(new Vector3(rndmPitch, rndmYaw, rndmRoll), Space.Self);
+        obstacle.obstacleModel.transform.Rotate(
+            new Vector3(rndmPitch, rndmYaw, rndmRoll), Space.Self);
     }
 
 
@@ -91,6 +93,7 @@ public class ObstacleRandomness : MonoBehaviour
     {
         float rndmSize = Random.Range(minSize, maxSize);
 
-        obstacleTransform.localScale = new Vector3(rndmSize, rndmSize, rndmSize);
+        obstacle.obstacleModel.transform.localScale =
+            new Vector3(rndmSize, rndmSize, rndmSize);
     }
 }
