@@ -42,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
         hearts--;
         player.isAlive = false;
         player.rigidBody.useGravity = true;
+        player.boxCollider.enabled = false;
         player.playerFX.PlayDeathVFX();
         player.sceneLoader.DeathRestart();
     }

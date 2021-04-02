@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
 
     //CACHED COMPONENT REFERENCES
     internal Rigidbody rigidBody;
+    internal BoxCollider boxCollider;
 
     //CACHED EXTERNAL REFERENCES
     internal SceneLoader sceneLoader;
@@ -44,6 +45,8 @@ public class Player : MonoBehaviour
         playerFX = GetComponent<PlayerFX>();
 
         rigidBody = GetComponentInChildren<Rigidbody>();
+        boxCollider = GetComponent<BoxCollider>();
+
         sceneLoader = FindObjectOfType<SceneLoader>();
     }
 
