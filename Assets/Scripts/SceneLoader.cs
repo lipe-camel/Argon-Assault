@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] float splashScreenTime = 2f;
+    [SerializeField] float deathRestart = 2f;
+
     int currentScene;
 
     void Start()
@@ -22,8 +24,13 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(currentScene + 1);
     }
 
-    public void RestartScene()
+    private void RestartScene()
     {
         SceneManager.LoadScene(currentScene);
+    }
+
+    public void DeathRestart()
+    {
+        Invoke("RestartScene", deathRestart);
     }
 }

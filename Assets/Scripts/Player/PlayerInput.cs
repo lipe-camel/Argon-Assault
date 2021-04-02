@@ -36,15 +36,19 @@ public class PlayerInput : MonoBehaviour
     //INPUT MANAGER
     private void ManageInputs()
     {
-        ManageMovementInput();
-        ManageFireInput();
+        if (player.isAlive)
+        {
+            ManageMovementInput();
+            ManageFireInput();
+        }
+        
     }
 
     private void ManageMovementInput()
     {
         float xThrow = movement.ReadValue<Vector2>().x;
         float yThrow = movement.ReadValue<Vector2>().y;
-        //Debug.Log(xThrow + ", " + yThrow);
+        //Debug.Log($"{xThrow}, {yThrow}");
         player.playerMovement.ProcessPlayerMovement(xThrow, yThrow);
     }
 

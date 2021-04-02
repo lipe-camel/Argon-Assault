@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     //INSPECTOR REFERENCES
     [SerializeField] internal ParticleSystem[] lasers;
 
+    //STATES
+    internal bool isAlive = true;
+
     //CACHED CLASSES REFERENCES
     internal PlayerInput playerInput;
     internal PlayerMovement playerMovement;

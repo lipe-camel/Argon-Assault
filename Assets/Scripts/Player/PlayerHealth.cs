@@ -39,7 +39,9 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         hearts--;
+        player.isAlive = false;
+        player.rigidBody.useGravity = true;
         Debug.Log("player should die now");
-        player.sceneLoader.RestartScene();
+        player.sceneLoader.DeathRestart();
     }
 }
