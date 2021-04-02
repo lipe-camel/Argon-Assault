@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3187635980014072788}
   - component: {fileID: 3187635980014072779}
   - component: {fileID: 1157073490}
-  - component: {fileID: 1157073486}
+  - component: {fileID: 5660174351519199633}
+  - component: {fileID: 7628495200727806819}
   m_Layer: 0
   m_Name: Obstacle(0)
   m_TagString: Untagged
@@ -46,7 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3dfa1d1cfe1e79428e923116c252b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleOptions: []
+  obstacleOptions:
+  - {fileID: 1056666096333670, guid: f603e71ddc270d54192200e95673e2a6, type: 3}
+  - {fileID: 1822345149752838, guid: 45b62242ff99b0a48a47f713cd6d1687, type: 3}
   defaultObstacle: {fileID: 5549877562829624422, guid: b56e607c1d3b2f3409ffce9fbd91e42d,
     type: 3}
 --- !u!114 &3187635980014072779
@@ -61,10 +64,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ef2d6f5ae6f25458bfae4c94b3b151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationFactor: 0.05
+  rotationFactor: 0.2
   initialRotation: 180
-  minSize: 1
-  maxSize: 2
+  minSize: 3
+  maxSize: 6
 --- !u!54 &1157073490
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -81,8 +84,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &1157073486
-SphereCollider:
+--- !u!114 &5660174351519199633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3187635980014072777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fd7ccd332a94e4d8924abcd1d196ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7628495200727806819
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,5 +107,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.1
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

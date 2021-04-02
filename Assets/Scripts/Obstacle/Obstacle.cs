@@ -14,15 +14,29 @@ public class Obstacle : MonoBehaviour
 
     //CACHED COMPONENT REFERENCES
     internal GameObject obstacleModel;
+    internal BoxCollider boxCollider;
+
 
     private void Start()
+    {
+        GetCachedReferences();
+        StartCustomStarts();
+    }
+
+    private void GetCachedReferences()
     {
         obstacleRandomness = GetComponent<ObstacleRandomness>();
         obstacleCollision = GetComponent<ObstacleCollision>();
 
+        boxCollider = GetComponent<BoxCollider>();
+    }
+
+    private void StartCustomStarts()
+    {
         obstacleRandomness.CustomStart();
         obstacleCollision.CustomStart();
     }
+
 
     internal void DestroyThisObstacle()
     {

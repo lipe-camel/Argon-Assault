@@ -43,20 +43,20 @@ public class ObstacleRandomness : MonoBehaviour
     //MODEL
     private void SetObstacleModel()
     {
-        if (obstacle.obstacleOptions.Length == 0)
-        {
-            InstantiateModel(obstacle.defaultObstacle);
-        }
-        else
+        if (obstacle.obstacleOptions.Length > 0)
         {
             var randomObstacle = obstacle.obstacleOptions[Random.Range(0, obstacle.obstacleOptions.Length)];
             InstantiateModel(randomObstacle);
+        }
+        else
+        {
+            InstantiateModel(obstacle.defaultObstacle);
         }
     }
 
     private void InstantiateModel(GameObject obstacleModel)
     {
-        obstacle.obstacleModel = Instantiate(obstacle.defaultObstacle, obstacle.transform); ;
+        obstacle.obstacleModel = Instantiate(obstacleModel, obstacle.transform); ;
         obstacle.obstacleModel.transform.parent = transform;
     }
 
@@ -92,8 +92,9 @@ public class ObstacleRandomness : MonoBehaviour
     private void SetInitialSize()
     {
         float rndmSize = Random.Range(minSize, maxSize);
+        Vector3 rndmV3Size = new Vector3(rndmSize, rndmSize, rndmSize);
 
-        obstacle.obstacleModel.transform.localScale =
-            new Vector3(rndmSize, rndmSize, rndmSize);
+        obstacle.obstacleModel.transform.localScale = rndmV3Size;
+        obstacle.boxCollider.size = rndmV3Size;
     }
 }
