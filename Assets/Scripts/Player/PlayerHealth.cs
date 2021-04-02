@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
     private void LoseHeart()
     {
         hearts--;
+        player.playerFX.PlayDamageVFX();
     }
 
     private void Die()
@@ -41,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
         hearts--;
         player.isAlive = false;
         player.rigidBody.useGravity = true;
-        Debug.Log("player should die now");
+        player.playerFX.PlayDeathVFX();
         player.sceneLoader.DeathRestart();
     }
 }

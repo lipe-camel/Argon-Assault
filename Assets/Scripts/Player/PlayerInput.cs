@@ -41,7 +41,6 @@ public class PlayerInput : MonoBehaviour
             ManageMovementInput();
             ManageFireInput();
         }
-        
     }
 
     private void ManageMovementInput()

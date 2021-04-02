@@ -1,10 +1,11 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerInput))]
-[RequireComponent(typeof(PlayerMovement))]
-[RequireComponent(typeof(PlayerFire))]
-[RequireComponent(typeof(PlayerCollision))]
-[RequireComponent(typeof(PlayerHealth))]
+//[RequireComponent(typeof(PlayerInput))]
+//[RequireComponent(typeof(PlayerMovement))]
+//[RequireComponent(typeof(PlayerFire))]
+//[RequireComponent(typeof(PlayerCollision))]
+//[RequireComponent(typeof(PlayerHealth))]
+//[RequireComponent(typeof(PlayerFX))]
 public class Player : MonoBehaviour
 {
     //INSPECTOR REFERENCES
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     internal PlayerFire playerFire;
     internal PlayerCollision playerColision;
     internal PlayerHealth playerHealth;
+    internal PlayerFX playerFX;
 
     //CACHED COMPONENT REFERENCES
     internal Rigidbody rigidBody;
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
         playerFire = GetComponent<PlayerFire>();
         playerColision = GetComponent<PlayerCollision>();
         playerHealth = GetComponent<PlayerHealth>();
+        playerFX = GetComponent<PlayerFX>();
 
         rigidBody = GetComponentInChildren<Rigidbody>();
         sceneLoader = FindObjectOfType<SceneLoader>();
@@ -51,5 +54,6 @@ public class Player : MonoBehaviour
         playerFire.CustomStart();
         playerColision.CustomStart();
         playerHealth.CustomStart();
+        playerFX.CustomStart();
     }
 }
