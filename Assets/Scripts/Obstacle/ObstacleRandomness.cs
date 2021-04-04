@@ -14,8 +14,10 @@ public class ObstacleRandomness : MonoBehaviour
     [SerializeField] float minSize = 1;
     [SerializeField] float maxSize = 5f;
 
-    //STATE
+    //STATS
     float rndmPitch, rndmYaw, rndmRoll;
+    internal float rndmSize;
+
 
     //CACHED CLASSES REFERENCES
     Obstacle obstacle;
@@ -91,7 +93,7 @@ public class ObstacleRandomness : MonoBehaviour
     //SCALE
     private void SetInitialSize()
     {
-        float rndmSize = Random.Range(minSize, maxSize);
+        rndmSize = Random.Range(minSize, maxSize);
         Vector3 rndmV3Size = new Vector3(rndmSize, rndmSize, rndmSize);
 
         obstacle.obstacleModel.transform.localScale = rndmV3Size;

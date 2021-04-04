@@ -16,6 +16,7 @@ public class ObstacleCollision : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         Debug.Log($"{this.gameObject.name} collided with {other.gameObject.name}");
-        obstacle.DestroyThisObstacle();
+        float damage = other.GetComponentInParent<PlayerFire>().GetDamage();
+        obstacle.obstacleHealth.ManageDamage(damage);
     }
 }

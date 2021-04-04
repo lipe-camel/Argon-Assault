@@ -9,8 +9,10 @@ public class Obstacle : MonoBehaviour
     [SerializeField] internal GameObject defaultObstacle;
 
     //CACHED CLASSES REFERENCES
-    ObstacleRandomness obstacleRandomness;
-    ObstacleCollision obstacleCollision;
+    internal ObstacleRandomness obstacleRandomness;
+    internal ObstacleCollision obstacleCollision;
+    internal ObstacleHealth obstacleHealth;
+    internal ObstacleFX obstacleFX;
 
     //CACHED COMPONENT REFERENCES
     internal GameObject obstacleModel;
@@ -27,6 +29,8 @@ public class Obstacle : MonoBehaviour
     {
         obstacleRandomness = GetComponent<ObstacleRandomness>();
         obstacleCollision = GetComponent<ObstacleCollision>();
+        obstacleHealth = GetComponent<ObstacleHealth>();
+        obstacleFX = GetComponent<ObstacleFX>();
 
         boxCollider = GetComponent<BoxCollider>();
     }
@@ -35,12 +39,7 @@ public class Obstacle : MonoBehaviour
     {
         obstacleRandomness.CustomStart();
         obstacleCollision.CustomStart();
+        obstacleHealth.CustomStart();
+        obstacleFX.CustomStart();
     }
-
-
-    internal void DestroyThisObstacle()
-    {
-        Destroy(gameObject);
-    }
-
 }

@@ -3,6 +3,9 @@
 [RequireComponent(typeof(Player))]
 public class PlayerFire : MonoBehaviour
 {
+    [SerializeField] float damage = 10f;
+
+    //CACHED CLASSES REFERENCES
     Player player;
 
     internal void CustomStart()
@@ -17,5 +20,10 @@ public class PlayerFire : MonoBehaviour
             var emissionModule = laser.emission;
             emissionModule.enabled = isActive;
         }
+    }
+
+    public float GetDamage()
+    {
+        return damage;
     }
 }
