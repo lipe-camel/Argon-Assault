@@ -6,26 +6,25 @@ public class ScoreBoard : MonoBehaviour
     //STATS
     int currentScore;
 
+    //CACHED EXTERNAL REFERENCES
+    [SerializeField] ScoreDisplay scoreDisplay;
+
     private void Start()
     {
         currentScore = 0;
-        UpdateScore();
+        scoreDisplay.UpdateScore(currentScore);
     }
 
-    private void UpdateScore()
-    {
-        Debug.Log(currentScore);
-    }
 
     public void AddToScore(int score)
     {
         currentScore += score;
-        UpdateScore();
+        scoreDisplay.UpdateScore(currentScore);
     }
 
     public void SubtractToScore(int score)
     {
         currentScore -= score;
-        UpdateScore();
+        scoreDisplay.UpdateScore(currentScore);
     }
 }
