@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Obstacle))]
 public class ObstacleHealth : MonoBehaviour
@@ -43,6 +42,7 @@ public class ObstacleHealth : MonoBehaviour
     private void Die()
     {
         obstacle.obstacleFX.PlayDeathVFX(transform.position); //TODO check the transform
+        obstacle.scoreBoard.AddToScore(obstacle.obstacleScore.GetobstacleScoreValue());
         Destroy(gameObject);
     }
 }

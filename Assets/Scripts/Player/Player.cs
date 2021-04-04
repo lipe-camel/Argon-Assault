@@ -1,11 +1,11 @@
 using UnityEngine;
 
-//[RequireComponent(typeof(PlayerInput))]
-//[RequireComponent(typeof(PlayerMovement))]
-//[RequireComponent(typeof(PlayerFire))]
-//[RequireComponent(typeof(PlayerCollision))]
-//[RequireComponent(typeof(PlayerHealth))]
-//[RequireComponent(typeof(PlayerFX))]
+[RequireComponent(typeof(PlayerInput))]
+[RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerFire))]
+[RequireComponent(typeof(PlayerCollision))]
+[RequireComponent(typeof(PlayerHealth))]
+[RequireComponent(typeof(PlayerFX))]
 public class Player : MonoBehaviour
 {
     //INSPECTOR REFERENCES

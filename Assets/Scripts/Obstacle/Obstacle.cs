@@ -2,6 +2,9 @@ using UnityEngine;
 
 [RequireComponent(typeof(ObstacleRandomness))]
 [RequireComponent(typeof(ObstacleCollision))]
+[RequireComponent(typeof(ObstacleHealth))]
+[RequireComponent(typeof(ObstacleFX))]
+[RequireComponent(typeof(ObstacleScore))]
 public class Obstacle : MonoBehaviour
 {
     //CONFIG PARAMS
@@ -13,11 +16,14 @@ public class Obstacle : MonoBehaviour
     internal ObstacleCollision obstacleCollision;
     internal ObstacleHealth obstacleHealth;
     internal ObstacleFX obstacleFX;
+    internal ObstacleScore obstacleScore;
 
     //CACHED COMPONENT REFERENCES
     internal GameObject obstacleModel;
     internal BoxCollider boxCollider;
 
+    //CACHED EXRTERNAL REFERENCES
+    internal ScoreBoard scoreBoard;
 
     private void Start()
     {
@@ -31,8 +37,11 @@ public class Obstacle : MonoBehaviour
         obstacleCollision = GetComponent<ObstacleCollision>();
         obstacleHealth = GetComponent<ObstacleHealth>();
         obstacleFX = GetComponent<ObstacleFX>();
+        obstacleScore = GetComponent<ObstacleScore>();
 
         boxCollider = GetComponent<BoxCollider>();
+
+        scoreBoard = FindObjectOfType<ScoreBoard>();
     }
 
     private void StartCustomStarts()
@@ -41,5 +50,6 @@ public class Obstacle : MonoBehaviour
         obstacleCollision.CustomStart();
         obstacleHealth.CustomStart();
         obstacleFX.CustomStart();
+        obstacleScore.CustomStart();
     }
 }
