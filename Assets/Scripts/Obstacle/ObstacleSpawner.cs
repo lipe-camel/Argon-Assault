@@ -8,7 +8,6 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] float xSpawnLimit = 19f, ySpawnLimit = 12f;
     [SerializeField] float minSpawnDelay = 1f;
     [SerializeField] float maxSpawnDelay = 5f;
-    [SerializeField] float gameSpeed = 2f;
 
     //STATES
     bool spawn = true;
@@ -27,11 +26,12 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void SpawnObstacle()
     {
-        //INSTANTIATE OBSTACLE IN PARENT GAMEOBJECT
+        //GET THE RANDOM VECTOR3
         float rndmX = Random.Range(-xSpawnLimit, xSpawnLimit);
         float rndmY = Random.Range(-ySpawnLimit, ySpawnLimit);
         Vector3 randomPos = new Vector3(rndmX, rndmY, transform.position.z);
 
+        //INSTANTIATE OBSTACLE IN PARENT GAMEOBJECT
         GameObject spawnedObstacle = Instantiate(obstacle, randomPos, transform.rotation);
         spawnedObstacle.transform.parent = transform;
 
@@ -39,10 +39,5 @@ public class ObstacleSpawner : MonoBehaviour
         //RENAME OBSTACLE
         spawnedObstacle.gameObject.name = $"Obstacle ({obstacleCount})";
         obstacleCount++;
-
-
-        //APPLY ZED MOVEMENT
-        Rigidbody obstacleRigidbody = spawnedObstacle.GetComponent<Rigidbody>();
-        obstacleRigidbody.velocity = new Vector3(0, 0, -gameSpeed);
     }
 }

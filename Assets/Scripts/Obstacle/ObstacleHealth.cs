@@ -37,6 +37,7 @@ public class ObstacleHealth : MonoBehaviour
     private void LoseHealth(Vector3 instantiatePos)
     {
         obstacle.obstacleFX.PlayDamageVFX(instantiatePos);
+        obstacle.obstacleMovement.DecreaseSpeed();
     }
 
     private void Die()

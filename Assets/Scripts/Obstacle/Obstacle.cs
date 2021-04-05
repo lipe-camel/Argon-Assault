@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(ObstacleRandomness))]
+[RequireComponent(typeof(ObstacleMovement))]
 [RequireComponent(typeof(ObstacleCollision))]
 [RequireComponent(typeof(ObstacleHealth))]
 [RequireComponent(typeof(ObstacleFX))]
@@ -13,6 +14,7 @@ public class Obstacle : MonoBehaviour
 
     //CACHED CLASSES REFERENCES
     internal ObstacleRandomness obstacleRandomness;
+    internal ObstacleMovement obstacleMovement;
     internal ObstacleCollision obstacleCollision;
     internal ObstacleHealth obstacleHealth;
     internal ObstacleFX obstacleFX;
@@ -20,6 +22,7 @@ public class Obstacle : MonoBehaviour
 
     //CACHED COMPONENT REFERENCES
     internal GameObject obstacleModel;
+    internal Rigidbody rigidBody;
 
     //CACHED EXRTERNAL REFERENCES
     internal ScoreBoard scoreBoard;
@@ -33,10 +36,13 @@ public class Obstacle : MonoBehaviour
     private void GetCachedReferences()
     {
         obstacleRandomness = GetComponent<ObstacleRandomness>();
+        obstacleMovement = GetComponent<ObstacleMovement>();
         obstacleCollision = GetComponent<ObstacleCollision>();
         obstacleHealth = GetComponent<ObstacleHealth>();
         obstacleFX = GetComponent<ObstacleFX>();
         obstacleScore = GetComponent<ObstacleScore>();
+
+        rigidBody = GetComponent<Rigidbody>();
 
         scoreBoard = FindObjectOfType<ScoreBoard>();
     }
@@ -44,6 +50,7 @@ public class Obstacle : MonoBehaviour
     private void StartCustomStarts()
     {
         obstacleRandomness.CustomStart();
+        obstacleMovement.CustomStart();
         obstacleCollision.CustomStart();
         obstacleHealth.CustomStart();
         obstacleFX.CustomStart();
