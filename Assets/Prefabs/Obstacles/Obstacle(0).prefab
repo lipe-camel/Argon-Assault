@@ -66,8 +66,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleOptions:
-  - {fileID: 1056666096333670, guid: f603e71ddc270d54192200e95673e2a6, type: 3}
-  - {fileID: 1822345149752838, guid: 45b62242ff99b0a48a47f713cd6d1687, type: 3}
+  - {fileID: 1056666096333670, guid: b967b7faad8300942b63371cca467dc8, type: 3}
+  - {fileID: 1822345149752838, guid: ab631d8692cb46748aede5b6dcbf079f, type: 3}
   defaultObstacle: {fileID: 5549877562829624422, guid: b56e607c1d3b2f3409ffce9fbd91e42d,
     type: 3}
 --- !u!114 &3187635980014072779

@@ -18,7 +18,6 @@ public class ObstacleRandomness : MonoBehaviour
     float rndmPitch, rndmYaw, rndmRoll;
     internal float rndmSize;
 
-
     //CACHED CLASSES REFERENCES
     Obstacle obstacle;
 
@@ -32,8 +31,8 @@ public class ObstacleRandomness : MonoBehaviour
 
         SetObstacleModel();
         SetRandomRotationFactor();
-        SetInitialRotation();
-        SetInitialSize();
+        SetInitialRotation(initialRotation);
+        SetModelSize(obstacle.obstacleModel, minSize, maxSize);
     }
 
     private void Update()
@@ -63,16 +62,23 @@ public class ObstacleRandomness : MonoBehaviour
     }
 
 
+    //POSITION
+    internal Vector3 GetRandomPos(float posFlutuation)
+    {
+        return new Vector3(
+                Random.Range(transform.position.x - posFlutuation, transform.position.x + posFlutuation),
+                Random.Range(transform.position.y - posFlutuation, transform.position.y + posFlutuation),
+                Random.Range(transform.position.z - posFlutuation, transform.position.z + posFlutuation));
+    }
+
+
     //ROTATION
     //this sets the rotation to be used when summoned
-    private void SetInitialRotation()
-    {
-        float rndmX = Random.Range(-initialRotation, initialRotation);
-        float rndmY = Random.Range(-initialRotation, initialRotation);
-        float rndmZ = Random.Range(-initialRotation, initialRotation);
+    
 
-        obstacle.obstacleModel.transform.rotation =
-            Quaternion.Euler(rndmX, rndmY, rndmZ);
+    private void SetInitialRotation(float initialRoatation)
+    {
+        obstacle.obstacleModel.transform.rotation = Quaternion.Euler(GetRandomizedV3(initialRotation));
     }
 
     //this sets the rotation to be used in the rotation update
@@ -91,11 +97,22 @@ public class ObstacleRandomness : MonoBehaviour
 
 
     //SCALE
-    private void SetInitialSize()
+    internal void SetModelSize(GameObject model, float minSize, float maxSize)
     {
         rndmSize = Random.Range(minSize, maxSize);
         Vector3 rndmV3Size = new Vector3(rndmSize, rndmSize, rndmSize);
 
-        obstacle.obstacleModel.transform.localScale = rndmV3Size;
+        model.transform.localScale = rndmV3Size;
+    }
+
+
+    //VECTOR3
+
+    internal Vector3 GetRandomizedV3(float flutuationValue)
+    {
+        float rndmX = Random.Range(-flutuationValue, flutuationValue);
+        float rndmY = Random.Range(-flutuationValue, flutuationValue);
+        float rndmZ = Random.Range(-flutuationValue, flutuationValue);
+        return new Vector3(rndmX, rndmY, rndmZ);
     }
 }

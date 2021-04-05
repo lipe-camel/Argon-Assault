@@ -42,9 +42,8 @@ public class ObstacleHealth : MonoBehaviour
 
     private void Die()
     {
-        obstacle.obstacleFX.PlayDeathVFX(transform.position); //TODO check the transform
         obstacle.scoreBoard.AddToScore(obstacle.obstacleScore.GetobstacleScoreValue());
-        Destroy(gameObject);
+        obstacle.obstacleFX.Explode(transform.position);
     }
 
 
