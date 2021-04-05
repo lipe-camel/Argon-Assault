@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(Obstacle))]
 public class ObstacleFX : MonoBehaviour
@@ -21,6 +22,7 @@ public class ObstacleFX : MonoBehaviour
     [SerializeField] float velocityFlutuation = 10f;
     [SerializeField] float minVelocity = 5f;
 
+    [SerializeField] float timeToDestroy = 2f;
 
     //CACHED CLASSES REFERENCES
     Obstacle obstacle;
@@ -79,7 +81,7 @@ public class ObstacleFX : MonoBehaviour
         DisableComponents();
         InstantiateVFX(deathVFX, instantiatePos);
 
-        //destroy game object
+        Destroy(this.gameObject, timeToDestroy);
     }
 
     private void DisableComponents()
@@ -117,7 +119,7 @@ public class ObstacleFX : MonoBehaviour
             rigidbody.velocity = obstacle.obstacleRandomness.GetRandomVelocity(velocityFlutuation, minVelocity);
 
             //shink in size untill size 0
-
+            littlePart.AddComponent<ShrinkPiece>();
 
             numberOfParts--;
         }

@@ -136,6 +136,7 @@ MonoBehaviour:
   maxPieceSize: 1
   velocityFlutuation: 10
   minVelocity: 5
+  timeToDestroy: 60
 --- !u!114 &-1774627461318937949
 MonoBehaviour:
   m_ObjectHideFlags: 0
