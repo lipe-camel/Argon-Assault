@@ -53,6 +53,17 @@ public class Debugger : MonoBehaviour
                     Debug.Log($"new {obstacle.gameObject.name} health: {obstacle.obstacleHealth.health}");
                 }
             }
+
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                obstacles = FindObjectsOfType<Obstacle>();
+                foreach (Obstacle obstacle in obstacles)
+                {
+                    obstacle.obstacleHealth.Die();
+                    Debug.Log($"All obstacles destroyed");
+                }
+            }
+
         }
     }
 }

@@ -40,7 +40,7 @@ public class ObstacleHealth : MonoBehaviour
         obstacle.obstacleMovement.DecreaseSpeed();
     }
 
-    private void Die()
+    internal void Die()
     {
         obstacle.scoreBoard.AddToScore(obstacle.obstacleScore.GetobstacleScoreValue());
         obstacle.obstacleFX.Explode(transform.position);

@@ -19,6 +19,7 @@ public class ObstacleFX : MonoBehaviour
     [SerializeField] float maxPieceSize = 1f;
 
     [SerializeField] float velocityFlutuation = 10f;
+    [SerializeField] float minVelocity = 5f;
 
 
     //CACHED CLASSES REFERENCES
@@ -30,32 +31,17 @@ public class ObstacleFX : MonoBehaviour
     //CACHED STRING REFERENCES
     const string PARTICLE_HOLDER_GM_OBJ = "Particles Holder";
 
+
+
+    //START
     internal void CustomStart()
     {
         obstacle = GetComponent<Obstacle>();
         FindParticlesHolder();
     }
 
-    private void FindParticlesHolder()
-    {
-        particlesHolder = GameObject.Find(PARTICLE_HOLDER_GM_OBJ);
-        if (!particlesHolder)
-        {
-            particlesHolder = new GameObject(PARTICLE_HOLDER_GM_OBJ);
-        }
-    }
 
-
-    internal void PlayDamageVFX(Vector3 instantiatePos)
-    {
-        InstantiateVFX(damageVFX, instantiatePos);
-    }
-
-    internal void PlayDeathVFX(Vector3 instantiatePos)
-    {
-        InstantiateVFX(deathVFX, instantiatePos);
-    }
-
+    //PARTICLES
     private void InstantiateVFX(GameObject prefabVFX, Vector3 instantiatePos)
     {
         if (!prefabVFX) { return; }
@@ -69,6 +55,23 @@ public class ObstacleFX : MonoBehaviour
         Destroy(vfx, duration);
     }
 
+    private void FindParticlesHolder()
+    {
+        particlesHolder = GameObject.Find(PARTICLE_HOLDER_GM_OBJ);
+        if (!particlesHolder)
+        {
+            particlesHolder = new GameObject(PARTICLE_HOLDER_GM_OBJ);
+        }
+    }
+
+    internal void PlayDamageVFX(Vector3 instantiatePos)
+    {
+        InstantiateVFX(damageVFX, instantiatePos);
+    }
+
+
+
+    //EXPLOSION
     internal void Explode(Vector3 instantiatePos)
     {
         StopParticleEmission();
@@ -103,26 +106,20 @@ public class ObstacleFX : MonoBehaviour
             //Instantiate with randomized transform and new name
             var littlePart = Instantiate(obstacle.obstacleModel,
                 obstacle.obstacleRandomness.GetRandomPos(posFlutuation),
-                Quaternion.Euler(obstacle.obstacleRandomness.GetRandomizedV3(rotFlutuation)));
+                Quaternion.Euler(obstacle.obstacleRandomness.GetRandomRotation(rotFlutuation)));
             obstacle.obstacleRandomness.SetModelSize(littlePart, minPieceSize, maxPieceSize);
             littlePart.transform.parent = transform;
             littlePart.gameObject.name = $"littlePart ({numberOfParts})";
 
+            //apply velocity
             Rigidbody rigidbody = littlePart.AddComponent<Rigidbody>();
             rigidbody.useGravity = false;
-            rigidbody.velocity = obstacle.obstacleRandomness.GetRandomizedV3(velocityFlutuation);
+            rigidbody.velocity = obstacle.obstacleRandomness.GetRandomVelocity(velocityFlutuation, minVelocity);
 
-            numberOfParts--;
-
-            //while this number is bigger than zero, instantiate a game object near the vector 3
-
-            //create/remove the (un)necessary components
-            //apply a random velocity
             //shink in size untill size 0
 
+
+            numberOfParts--;
         }
     }
-
-    
-
 }

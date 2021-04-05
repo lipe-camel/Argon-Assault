@@ -15,7 +15,7 @@ public class ObstacleRandomness : MonoBehaviour
     [SerializeField] float maxSize = 5f;
 
     //STATS
-    float rndmPitch, rndmYaw, rndmRoll;
+    Vector3 randomRotationFactor;
     internal float rndmSize;
 
     //CACHED CLASSES REFERENCES
@@ -74,25 +74,31 @@ public class ObstacleRandomness : MonoBehaviour
 
     //ROTATION
     //this sets the rotation to be used when summoned
-    
+    internal Vector3 GetRandomRotation(float flutuationValue)
+    {
+        float rndmX = Random.Range(-flutuationValue, flutuationValue);
+        float rndmY = Random.Range(-flutuationValue, flutuationValue);
+        float rndmZ = Random.Range(-flutuationValue, flutuationValue);
+        return new Vector3(rndmX, rndmY, rndmZ);
+    }
 
     private void SetInitialRotation(float initialRoatation)
     {
-        obstacle.obstacleModel.transform.rotation = Quaternion.Euler(GetRandomizedV3(initialRotation));
+        obstacle.obstacleModel.transform.rotation = Quaternion.Euler(GetRandomRotation(initialRotation));
     }
 
-    //this sets the rotation to be used in the rotation update
+    //this sets the rotation to be used in Rotate()
     private void SetRandomRotationFactor()
     {
-        rndmPitch = Random.Range(-rotationFactor, rotationFactor);
-        rndmYaw = Random.Range(-rotationFactor, rotationFactor);
-        rndmRoll = Random.Range(-rotationFactor, rotationFactor);
+        float rndmPitch = Random.Range(-rotationFactor, rotationFactor);
+        float rndmYaw = Random.Range(-rotationFactor, rotationFactor);
+        float rndmRoll = Random.Range(-rotationFactor, rotationFactor);
+        randomRotationFactor = new Vector3(rndmPitch, rndmYaw, rndmRoll);
     }
 
     private void Rotate()
     {
-        obstacle.obstacleModel.transform.Rotate(
-            new Vector3(rndmPitch, rndmYaw, rndmRoll), Space.Self);
+        obstacle.obstacleModel.transform.Rotate(randomRotationFactor, Space.Self);
     }
 
 
@@ -106,13 +112,31 @@ public class ObstacleRandomness : MonoBehaviour
     }
 
 
-    //VECTOR3
-
-    internal Vector3 GetRandomizedV3(float flutuationValue)
+    //VELOCITY
+    internal Vector3 GetRandomVelocity(float flutuationValue, float minValue)
     {
         float rndmX = Random.Range(-flutuationValue, flutuationValue);
         float rndmY = Random.Range(-flutuationValue, flutuationValue);
         float rndmZ = Random.Range(-flutuationValue, flutuationValue);
+        rndmX = CheckForMin(rndmX, minValue);
+        rndmY = CheckForMin(rndmY, minValue);
+        rndmZ = CheckForMin(rndmZ, minValue);
         return new Vector3(rndmX, rndmY, rndmZ);
+    }
+
+    private static float CheckForMin(float checkValue, float minValue)
+    {
+        if (checkValue > 0 && checkValue <= minValue)
+        {
+            return minValue;
+        }
+        else if (checkValue <= 0 && checkValue >= -minValue)
+        {
+            return -minValue;
+        }
+        else
+        {
+            return checkValue;
+        }
     }
 }
