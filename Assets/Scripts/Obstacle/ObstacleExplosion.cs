@@ -1,76 +1,33 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-
-[RequireComponent(typeof(Obstacle))]
-public class ObstacleFX : MonoBehaviour
+﻿using UnityEngine;
+    
+public class ObstacleExplosion : MonoBehaviour
 {
     //CONFIG PARAMS
-    [Header("Particles to Instantiate")]
-    [SerializeField] GameObject damageVFX;
-    [SerializeField] GameObject deathVFX;
-    [Header("Explosion")]
+    [Header("Pieces Quantity")]
     [SerializeField] int minNumOfPieces = 5;
     [SerializeField] int maxNumOfPieces = 8;
-
+    [Header("Position")]
     [SerializeField] float posFlutuation = 5f;
-
+    [Header("Rotation")]
     [SerializeField] float rotFlutuation = 15f;
-
-    [SerializeField] float minPieceSize= 0.1f;
+    [Header("Scale")]
+    [SerializeField] float minPieceSize = 0.1f;
     [SerializeField] float maxPieceSize = 1f;
-
+    [Header("Velocity")]
     [SerializeField] float velocityFlutuation = 10f;
     [SerializeField] float minVelocity = 5f;
-
+    [Header("Time")]
     [SerializeField] float timeToDestroy = 2f;
 
     //CACHED CLASSES REFERENCES
     Obstacle obstacle;
-
-    //CACHED EXTERNAL REFERENCES
-    GameObject particlesHolder;
-
-    //CACHED STRING REFERENCES
-    const string PARTICLE_HOLDER_GM_OBJ = "Particles Holder";
-
 
 
     //START
     internal void CustomStart()
     {
         obstacle = GetComponent<Obstacle>();
-        FindParticlesHolder();
     }
-
-
-    //PARTICLES
-    private void InstantiateVFX(GameObject prefabVFX, Vector3 instantiatePos)
-    {
-        if (!prefabVFX) { return; }
-
-        //instantiate in the particles holder parent
-        GameObject vfx = Instantiate(prefabVFX, instantiatePos, Quaternion.identity);
-        vfx.transform.parent = particlesHolder.transform;
-
-        //destroy after is finished
-        var duration = vfx.GetComponent<ParticleSystem>().main.duration * 2;
-        Destroy(vfx, duration);
-    }
-
-    private void FindParticlesHolder()
-    {
-        particlesHolder = GameObject.Find(PARTICLE_HOLDER_GM_OBJ);
-        if (!particlesHolder)
-        {
-            particlesHolder = new GameObject(PARTICLE_HOLDER_GM_OBJ);
-        }
-    }
-
-    internal void PlayDamageVFX(Vector3 instantiatePos)
-    {
-        InstantiateVFX(damageVFX, instantiatePos);
-    }
-
 
 
     //EXPLOSION
@@ -79,8 +36,7 @@ public class ObstacleFX : MonoBehaviour
         StopParticleEmission();
         InstantiateLittlePieces();
         DisableComponents();
-        InstantiateVFX(deathVFX, instantiatePos);
-
+        obstacle.obstacleParticles.PlayDeathVFX(instantiatePos);
         Destroy(this.gameObject, timeToDestroy);
     }
 
@@ -105,17 +61,23 @@ public class ObstacleFX : MonoBehaviour
         int numberOfParts = Random.Range(minNumOfPieces, maxNumOfPieces);
         while (numberOfParts > 0)
         {
-            //Instantiate with randomized transform and new name
+            //Instantiate with randomized position and rotation
             var littlePart = Instantiate(obstacle.obstacleModel,
                 obstacle.obstacleRandomness.GetRandomPos(posFlutuation),
                 Quaternion.Euler(obstacle.obstacleRandomness.GetRandomRotation(rotFlutuation)));
-            obstacle.obstacleRandomness.SetModelSize(littlePart, minPieceSize, maxPieceSize);
+
+            //randomize scale base on original size
+            float rndmScale = obstacle.obstacleRandomness.GetRandomScale(minPieceSize, maxPieceSize) * 
+                obstacle.obstacleModel.transform.localScale.x;
+            littlePart.transform.localScale = new Vector3(rndmScale, rndmScale, rndmScale);
+
+            //Organize in the correct parent and rename
             littlePart.transform.parent = transform;
             littlePart.gameObject.name = $"littlePart ({numberOfParts})";
 
             //apply velocity
             Rigidbody rigidbody = littlePart.AddComponent<Rigidbody>();
-            rigidbody.useGravity = false;
+            //rigidbody.useGravity = false;
             rigidbody.velocity = obstacle.obstacleRandomness.GetRandomVelocity(velocityFlutuation, minVelocity);
 
             //shink in size untill size 0

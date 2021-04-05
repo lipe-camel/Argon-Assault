@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 3187635980014072778}
   - component: {fileID: 1157073490}
   - component: {fileID: 3187635980014072788}
+  - component: {fileID: 9129252408154515537}
   - component: {fileID: 3187635980014072779}
   - component: {fileID: 5660174351519199633}
   - component: {fileID: 7472899667463507388}
   - component: {fileID: -1717529831407619664}
+  - component: {fileID: 6618655704438889308}
   - component: {fileID: -1774627461318937949}
-  - component: {fileID: 9129252408154515537}
   m_Layer: 0
   m_Name: Obstacle(0)
   m_TagString: Untagged
@@ -71,6 +72,21 @@ MonoBehaviour:
   - {fileID: 1822345149752838, guid: ab631d8692cb46748aede5b6dcbf079f, type: 3}
   defaultObstacle: {fileID: 5549877562829624422, guid: b56e607c1d3b2f3409ffce9fbd91e42d,
     type: 3}
+--- !u!114 &9129252408154515537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3187635980014072777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777bcabe875872043afc485b28d5cd2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSpeed: 60
+  minSpeed: 6
+  speedDecreased: 0.5
 --- !u!114 &3187635980014072779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationFactor: 0.2
   initialRotation: 180
-  minSize: 1
+  minSize: 2
   maxSize: 10
 --- !u!114 &5660174351519199633
 MonoBehaviour:
@@ -128,15 +144,27 @@ MonoBehaviour:
     type: 3}
   deathVFX: {fileID: 3200836327345539238, guid: c6bbdcc6560c5c84c80599e25cc539e5,
     type: 3}
-  minNumOfPieces: 5
-  maxNumOfPieces: 8
+--- !u!114 &6618655704438889308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3187635980014072777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e6248fdf54b0f4e949b1ffb39d5003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minNumOfPieces: 6
+  maxNumOfPieces: 15
   posFlutuation: 5
-  rotFlutuation: 15
-  minPieceSize: 0.1
-  maxPieceSize: 1
-  velocityFlutuation: 10
-  minVelocity: 5
-  timeToDestroy: 60
+  rotFlutuation: 180
+  minPieceSize: 0.05
+  maxPieceSize: 0.85
+  velocityFlutuation: 60
+  minVelocity: 40
+  timeToDestroy: 5
 --- !u!114 &-1774627461318937949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,18 +178,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseScore: 10
---- !u!114 &9129252408154515537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3187635980014072777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 777bcabe875872043afc485b28d5cd2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameSpeed: 60
-  minSpeed: 6
-  speedDecreased: 0.5

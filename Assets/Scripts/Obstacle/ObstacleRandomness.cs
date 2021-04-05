@@ -16,13 +16,9 @@ public class ObstacleRandomness : MonoBehaviour
 
     //STATS
     Vector3 randomRotationFactor;
-    internal float rndmSize;
 
     //CACHED CLASSES REFERENCES
     Obstacle obstacle;
-
-    //CACHED REFERENCES
-    Transform obstacleTransform;
 
 
     internal void CustomStart()
@@ -32,7 +28,7 @@ public class ObstacleRandomness : MonoBehaviour
         SetObstacleModel();
         SetRandomRotationFactor();
         SetInitialRotation(initialRotation);
-        SetModelSize(obstacle.obstacleModel, minSize, maxSize);
+        SetRandomizedScale(obstacle.obstacleModel, minSize, maxSize);
     }
 
     private void Update()
@@ -103,12 +99,15 @@ public class ObstacleRandomness : MonoBehaviour
 
 
     //SCALE
-    internal void SetModelSize(GameObject model, float minSize, float maxSize)
+    internal float GetRandomScale(float minSize, float maxSize)
     {
-        rndmSize = Random.Range(minSize, maxSize);
-        Vector3 rndmV3Size = new Vector3(rndmSize, rndmSize, rndmSize);
+        return Random.Range(minSize, maxSize);
+    }
 
-        model.transform.localScale = rndmV3Size;
+    internal void SetRandomizedScale(GameObject model, float minSize, float maxSize)
+    {
+        float rndmScale = GetRandomScale(minSize, maxSize);
+        model.transform.localScale = new Vector3(rndmScale, rndmScale, rndmScale);
     }
 
 

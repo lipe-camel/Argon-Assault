@@ -18,7 +18,7 @@ public class ObstacleHealth : MonoBehaviour
 
     {
         obstacle = GetComponent<Obstacle>();
-        health = healthBaseValue * obstacle.obstacleRandomness.rndmSize;
+        health = healthBaseValue * obstacle.obstacleModel.transform.localScale.x;
     }
 
     internal void ManageDamage(float damage, Vector3 instantiatePos)
@@ -36,14 +36,14 @@ public class ObstacleHealth : MonoBehaviour
 
     private void LoseHealth(Vector3 instantiatePos)
     {
-        obstacle.obstacleFX.PlayDamageVFX(instantiatePos);
+        obstacle.obstacleParticles.PlayDamageVFX(instantiatePos);
         obstacle.obstacleMovement.DecreaseSpeed();
     }
 
     internal void Die()
     {
         obstacle.scoreBoard.AddToScore(obstacle.obstacleScore.GetobstacleScoreValue());
-        obstacle.obstacleFX.Explode(transform.position);
+        obstacle.obstacleExplosion.Explode(transform.position);
     }
 
 

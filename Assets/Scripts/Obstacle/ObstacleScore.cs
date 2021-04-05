@@ -17,6 +17,6 @@ public class ObstacleScore : MonoBehaviour
 
     internal int GetobstacleScoreValue()
     {
-        return Mathf.FloorToInt(baseScore * obstacle.obstacleRandomness.rndmSize);
+        return Mathf.FloorToInt(baseScore * obstacle.obstacleModel.transform.localScale.x);
     }
 }

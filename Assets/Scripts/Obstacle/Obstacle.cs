@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(ObstacleMovement))]
 [RequireComponent(typeof(ObstacleCollision))]
 [RequireComponent(typeof(ObstacleHealth))]
-[RequireComponent(typeof(ObstacleFX))]
+[RequireComponent(typeof(ObstacleParticles))]
 [RequireComponent(typeof(ObstacleScore))]
 public class Obstacle : MonoBehaviour
 {
@@ -17,7 +17,8 @@ public class Obstacle : MonoBehaviour
     internal ObstacleMovement obstacleMovement;
     internal ObstacleCollision obstacleCollision;
     internal ObstacleHealth obstacleHealth;
-    internal ObstacleFX obstacleFX;
+    internal ObstacleParticles obstacleParticles;
+    internal ObstacleExplosion obstacleExplosion;
     internal ObstacleScore obstacleScore;
 
     //CACHED COMPONENT REFERENCES
@@ -39,7 +40,8 @@ public class Obstacle : MonoBehaviour
         obstacleMovement = GetComponent<ObstacleMovement>();
         obstacleCollision = GetComponent<ObstacleCollision>();
         obstacleHealth = GetComponent<ObstacleHealth>();
-        obstacleFX = GetComponent<ObstacleFX>();
+        obstacleParticles = GetComponent<ObstacleParticles>();
+        obstacleExplosion = GetComponent<ObstacleExplosion>();
         obstacleScore = GetComponent<ObstacleScore>();
 
         rigidBody = GetComponent<Rigidbody>();
@@ -53,7 +55,8 @@ public class Obstacle : MonoBehaviour
         obstacleMovement.CustomStart();
         obstacleCollision.CustomStart();
         obstacleHealth.CustomStart();
-        obstacleFX.CustomStart();
+        obstacleParticles.CustomStart();
+        obstacleExplosion.CustomStart();
         obstacleScore.CustomStart();
     }
 }

@@ -47,6 +47,5 @@ MonoBehaviour:
     type: 3}
   xSpawnLimit: 30
   ySpawnLimit: 18
-  minSpawnDelay: 1
-  maxSpawnDelay: 4
-  gameSpeed: 60
+  minSpawnDelay: 0.5
+  maxSpawnDelay: 3
