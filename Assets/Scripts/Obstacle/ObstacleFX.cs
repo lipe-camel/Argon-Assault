@@ -51,7 +51,7 @@ public class ObstacleFX : MonoBehaviour
         vfx.transform.parent = particlesHolder.transform;
 
         //destroy after is finished
-        var duration = vfx.GetComponent<ParticleSystem>().main.duration;
+        var duration = vfx.GetComponent<ParticleSystem>().main.duration * 2;
         Destroy(vfx, duration);
     }
 }

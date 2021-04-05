@@ -21,12 +21,12 @@ public class ObstacleHealth : MonoBehaviour
         health = healthBaseValue * obstacle.obstacleRandomness.rndmSize;
     }
 
-    internal void ManageDamage(float damage)
+    internal void ManageDamage(float damage, Vector3 instantiatePos)
     {
         health -= damage;
         if(health >= 0)
         {
-            LoseHealth();
+            LoseHealth(instantiatePos);
         }
         else
         {
@@ -34,9 +34,9 @@ public class ObstacleHealth : MonoBehaviour
         }
     }
 
-    private void LoseHealth()
+    private void LoseHealth(Vector3 instantiatePos)
     {
-        obstacle.obstacleFX.PlayDamageVFX(transform.position); //TODO check the transform
+        obstacle.obstacleFX.PlayDamageVFX(instantiatePos);
     }
 
     private void Die()

@@ -99,7 +99,7 @@ MonoBehaviour:
   rotationFactor: 0.2
   initialRotation: 180
   minSize: 1
-  maxSize: 8
+  maxSize: 10
 --- !u!114 &5660174351519199633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3d1abeb1f1dd44e82bf8a1767ef90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBaseValue: 10
+  healthBaseValue: 20
 --- !u!114 &-1717529831407619664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,8 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageVFX: {fileID: 3200836327345539238, guid: c6bbdcc6560c5c84c80599e25cc539e5,
     type: 3}
-  deathVFX: {fileID: 3200836327345539238, guid: fbfc53e11975af64eb5643e01c633c4b,
-    type: 3}
+  deathVFX: {fileID: 0}
 --- !u!114 &-1774627461318937949
 MonoBehaviour:
   m_ObjectHideFlags: 0

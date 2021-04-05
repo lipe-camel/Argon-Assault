@@ -7,7 +7,6 @@ public class ObstacleCollision : MonoBehaviour
     //CACHED CLASSES REFERENCES
     Obstacle obstacle;
     List<ParticleCollisionEvent> collisionEvents;
-    [SerializeField] GameObject testobject;
 
 
     internal void CustomStart()
@@ -19,33 +18,13 @@ public class ObstacleCollision : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        //Debug.Log($"{this.gameObject.name} collided with {other.gameObject.name}");
+        //Get the damage value
         float damage = other.GetComponentInParent<PlayerFire>().GetDamage();
 
+        //Get the intersection position
         ParticleSystem particleSystem = other.GetComponent<ParticleSystem>();
         ParticlePhysicsExtensions.GetCollisionEvents(particleSystem, this.gameObject, collisionEvents);
-        EmitatLocation(collisionEvents[0]);
-        
 
-        obstacle.obstacleHealth.ManageDamage(damage);
-    }
-
-    void EmitatLocation(ParticleCollisionEvent particleCollisionEvent)
-    {
-        var pos = particleCollisionEvent.intersection;
-        var rot = Quaternion.LookRotation(particleCollisionEvent.normal);
-        Instantiate(testobject, pos, rot);
+        obstacle.obstacleHealth.ManageDamage(damage, collisionEvents[0].intersection);
     }
 }
-
-
-
-
-//Vector3 intersectionPoint;
-//ParticleSystem particleSystem = other.GetComponent<ParticleSystem>();
-//int numcollisionevent = ParticlePhysicsExtensions.GetCollisionEvents(particleSystem, other, collisionevents);
-//for (int i = 0; i < numcollisionevent; i++)
-//{
-//    intersectionPoint = collisionevents[i].intersection;
-//    Debug.Log(intersectionPoint);
-//}
