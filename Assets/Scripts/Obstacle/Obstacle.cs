@@ -20,7 +20,6 @@ public class Obstacle : MonoBehaviour
 
     //CACHED COMPONENT REFERENCES
     internal GameObject obstacleModel;
-    internal BoxCollider boxCollider;
 
     //CACHED EXRTERNAL REFERENCES
     internal ScoreBoard scoreBoard;
@@ -38,8 +37,6 @@ public class Obstacle : MonoBehaviour
         obstacleHealth = GetComponent<ObstacleHealth>();
         obstacleFX = GetComponent<ObstacleFX>();
         obstacleScore = GetComponent<ObstacleScore>();
-
-        boxCollider = GetComponent<BoxCollider>();
 
         scoreBoard = FindObjectOfType<ScoreBoard>();
     }

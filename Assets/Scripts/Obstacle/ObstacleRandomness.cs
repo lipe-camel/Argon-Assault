@@ -97,6 +97,5 @@ public class ObstacleRandomness : MonoBehaviour
         Vector3 rndmV3Size = new Vector3(rndmSize, rndmSize, rndmSize);
 
         obstacle.obstacleModel.transform.localScale = rndmV3Size;
-        obstacle.boxCollider.size = rndmV3Size;
     }
 }
