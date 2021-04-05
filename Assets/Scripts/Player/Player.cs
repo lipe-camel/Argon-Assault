@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     internal PlayerInput playerInput;
     internal PlayerMovement playerMovement;
     internal PlayerFire playerFire;
-    internal PlayerCollision playerColision;
+    internal PlayerCollision playerCollision;
     internal PlayerHealth playerHealth;
     internal PlayerFX playerFX;
 
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerMovement = GetComponent<PlayerMovement>();
         playerFire = GetComponent<PlayerFire>();
-        playerColision = GetComponent<PlayerCollision>();
+        playerCollision = GetComponent<PlayerCollision>();
         playerHealth = GetComponent<PlayerHealth>();
         playerFX = GetComponent<PlayerFX>();
 
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         playerInput.CustomStart();
         playerMovement.CustomStart();
         playerFire.CustomStart();
-        playerColision.CustomStart();
+        playerCollision.CustomStart();
         playerHealth.CustomStart();
         playerFX.CustomStart();
     }

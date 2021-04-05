@@ -19,6 +19,11 @@ public class PlayerHealth : MonoBehaviour
         hearts = initialHearts;
     }
 
+    internal void GainHeart()
+    {
+        hearts++;
+    }
+
     internal void ManageDamage()
     {
         if(hearts > 1)
@@ -37,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
         player.playerFX.PlayDamageVFX();
     }
 
-    private void Die()
+    internal void Die()
     {
         hearts--;
         player.isAlive = false;

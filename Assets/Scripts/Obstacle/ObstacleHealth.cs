@@ -8,7 +8,7 @@ public class ObstacleHealth : MonoBehaviour
     float healthBaseValue = 10f;
 
     //STATS
-    float health;
+    internal float health;
 
     //CACHED CLASSES REFERENCES
     Obstacle obstacle;
@@ -45,5 +45,13 @@ public class ObstacleHealth : MonoBehaviour
         obstacle.obstacleFX.PlayDeathVFX(transform.position); //TODO check the transform
         obstacle.scoreBoard.AddToScore(obstacle.obstacleScore.GetobstacleScoreValue());
         Destroy(gameObject);
+    }
+
+
+
+    //FOR DEBUG BUILD
+    internal void TurnIndestructible(float indestructiblility)
+    {
+        health += indestructiblility;
     }
 }
