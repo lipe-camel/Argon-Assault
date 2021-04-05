@@ -43,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
         player.isAlive = false;
         player.rigidBody.useGravity = true;
         player.boxCollider.enabled = false;
+        player.playerFire.DisableLasers();
         player.playerFX.PlayDeathVFX();
         player.sceneLoader.DeathRestart();
     }

@@ -22,6 +22,14 @@ public class PlayerFire : MonoBehaviour
         }
     }
 
+    internal void DisableLasers()
+    {
+        foreach (ParticleSystem laser in player.lasers)
+        {
+            laser.gameObject.SetActive(false);
+        }
+    }
+
     public float GetDamage()
     {
         return damage;
