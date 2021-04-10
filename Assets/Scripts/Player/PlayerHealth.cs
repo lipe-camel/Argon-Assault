@@ -49,9 +49,11 @@ public class PlayerHealth : MonoBehaviour
     internal void Die()
     {
         player.isAlive = false;
-        player.rigidBody.useGravity = true;
+        //player.rigidBody.useGravity = true;
+        player.meshRenderer.enabled = false;
         player.boxCollider.enabled = false;
         player.playerFire.DisableLasers();
+        player.playerFX.DisableSecondaryParticles();
         player.playerFX.PlayDeathVFX();
         player.sceneLoader.DeathRestart();
     }

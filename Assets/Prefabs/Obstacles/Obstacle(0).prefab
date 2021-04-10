@@ -154,9 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dfe95754ebd32248b9d155a093fcbf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageVFX: {fileID: 3200836327345539238, guid: fbfc53e11975af64eb5643e01c633c4b,
+  damageVFX: {fileID: 4212237911574779972, guid: f34d53a9f8cd409428b8d1e3addf4807,
     type: 3}
-  deathVFX: {fileID: 3200836327345539238, guid: c6bbdcc6560c5c84c80599e25cc539e5,
+  deathVFX: {fileID: 6510125619236422602, guid: 6d7b01bdef4c9d44596d7108af762e72,
     type: 3}
 --- !u!114 &6618655704438889308
 MonoBehaviour:

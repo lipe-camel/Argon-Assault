@@ -898,6 +898,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4536869211796237029, guid: a026ddf85e21f5f408397bbd591ecc1c,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7827389219498688500, guid: a026ddf85e21f5f408397bbd591ecc1c,
         type: 3}
       propertyPath: m_RootOrder
@@ -1413,6 +1418,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1957062714948507167, guid: a336e274d4eb11f43864eea28fca5094,
+        type: 3}
+      propertyPath: DebuggerNotes
+      value: '"C" Toggles the player collisions;
+
+        "K" Kills the player;
+
+        "L"
+        Fills the player''s life;
+
+        "P" Turns the obstacles indestructible;
+
+        "B"
+        Destroy all current objects.'
+      objectReference: {fileID: 0}
     - target: {fileID: 3917238642822574480, guid: a336e274d4eb11f43864eea28fca5094,
         type: 3}
       propertyPath: m_RootOrder

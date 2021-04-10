@@ -15,15 +15,23 @@ internal class ObstacleParticles : MonoBehaviour
     const string PARTICLE_HOLDER_GM_OBJ = "Particles Holder";
 
 
-
-    //START
     internal void CustomStart()
     {
         FindParticlesHolder();
     }
 
 
-    //PARTICLES
+    internal void PlayDamageVFX(Vector3 instantiatePos)
+    {
+        InstantiateVFX(damageVFX, instantiatePos);
+    }
+
+    internal void PlayDeathVFX(Vector3 instantiatePos)
+    {
+        InstantiateVFX(deathVFX, instantiatePos);
+    }
+
+
     private void InstantiateVFX(GameObject prefabVFX, Vector3 instantiatePos)
     {
         if (!prefabVFX) { return; }
@@ -33,7 +41,7 @@ internal class ObstacleParticles : MonoBehaviour
         vfx.transform.parent = particlesHolder.transform;
 
         //destroy after is finished
-        var duration = vfx.GetComponent<ParticleSystem>().main.duration * 2;
+        var duration = vfx.GetComponent<ParticleSystem>().main.duration * 1;
         Destroy(vfx, duration);
     }
 
@@ -44,15 +52,5 @@ internal class ObstacleParticles : MonoBehaviour
         {
             particlesHolder = new GameObject(PARTICLE_HOLDER_GM_OBJ);
         }
-    }
-
-    internal void PlayDamageVFX(Vector3 instantiatePos)
-    {
-        InstantiateVFX(damageVFX, instantiatePos);
-    }
-
-    internal void PlayDeathVFX(Vector3 instantiatePos)
-    {
-        InstantiateVFX(deathVFX, instantiatePos);
     }
 }
