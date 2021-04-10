@@ -209,6 +209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHealth: 1
+  numberOfFlashes: 10
+  flashDuration: 0.1
 --- !u!114 &8406503217313729373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,8 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e0dcfb107ca4549ba84e7bce8709da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfFlashes: 10
-  flashDuration: 0.5
 --- !u!114 &-2600090723831046844
 MonoBehaviour:
   m_ObjectHideFlags: 0
