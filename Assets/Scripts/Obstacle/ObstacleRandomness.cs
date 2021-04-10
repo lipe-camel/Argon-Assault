@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Obstacle))]
-public class ObstacleRandomness : MonoBehaviour
+internal class ObstacleRandomness : MonoBehaviour
 {
     //CONFIG PARAMS
     [Header("Rotation")]
@@ -78,7 +78,7 @@ public class ObstacleRandomness : MonoBehaviour
         return new Vector3(rndmX, rndmY, rndmZ);
     }
 
-    private void SetInitialRotation(float initialRoatation)
+    private void SetInitialRotation(float initialRotation)
     {
         obstacle.obstacleModel.transform.rotation = Quaternion.Euler(GetRandomRotation(initialRotation));
     }
@@ -123,7 +123,7 @@ public class ObstacleRandomness : MonoBehaviour
         return new Vector3(rndmX, rndmY, rndmZ);
     }
 
-    private static float CheckForMin(float checkValue, float minValue)
+    private float CheckForMin(float checkValue, float minValue)
     {
         if (checkValue > 0 && checkValue <= minValue)
         {

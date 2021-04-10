@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Obstacle))]
-public class ObstacleMovement : MonoBehaviour
+internal class ObstacleMovement : MonoBehaviour
 {
     //CONFIG PARAMS
     [SerializeField] internal float gameSpeed = 60f;

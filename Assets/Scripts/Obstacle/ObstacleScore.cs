@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Obstacle))]
-public class ObstacleScore : MonoBehaviour
+internal class ObstacleScore : MonoBehaviour
 {
     //CONFIG PARAMS
     [SerializeField][Tooltip("To be multiplied by the obstacle randomized size")]

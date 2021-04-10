@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
     
-public class ObstacleExplosion : MonoBehaviour
+internal class ObstacleExplosion : MonoBehaviour
 {
     //CONFIG PARAMS
     [Header("Pieces Quantity")]
@@ -52,6 +52,7 @@ public class ObstacleExplosion : MonoBehaviour
     private void StopParticleEmission()
     {
         ParticleSystem particleSystem = obstacle.obstacleModel.GetComponentInChildren<ParticleSystem>();
+        if (!particleSystem) { return; }
         var main = particleSystem.main;
         main.maxParticles = 0;
     }

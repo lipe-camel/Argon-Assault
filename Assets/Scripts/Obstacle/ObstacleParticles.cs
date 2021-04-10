@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Obstacle))]
-public class ObstacleParticles : MonoBehaviour
+internal class ObstacleParticles : MonoBehaviour
 {
     //CONFIG PARAMS
     [Header("Particles to Instantiate")]

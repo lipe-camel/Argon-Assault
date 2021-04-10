@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Obstacle))]
-public class ObstacleCollision : MonoBehaviour
+internal class ObstacleCollision : MonoBehaviour
 {
     //CACHED CLASSES REFERENCES
     Obstacle obstacle;

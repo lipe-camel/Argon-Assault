@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Obstacle))]
-public class ObstacleHealth : MonoBehaviour
+internal class ObstacleHealth : MonoBehaviour
 {
     //CONFIG PARAMS
     [SerializeField] [Tooltip("The value to be multiplied by the obstacle randomized size")]
