@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     internal BoxCollider boxCollider;
 
     //CACHED EXTERNAL REFERENCES
+    internal HealthDisplay healthDisplay;
     internal SceneLoader sceneLoader;
 
     void Start()
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour
         rigidBody = GetComponentInChildren<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
 
+        healthDisplay = FindObjectOfType<HealthDisplay>();
         sceneLoader = FindObjectOfType<SceneLoader>();
     }
 

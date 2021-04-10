@@ -6,7 +6,7 @@ public class ScoreDisplay : MonoBehaviour
     //CACHED INTERNAL REFERENCES
     Text ScoreText;
 
-    private void Start()
+    public void CustomStart()
     {
         ScoreText = GetComponent<Text>();
     }

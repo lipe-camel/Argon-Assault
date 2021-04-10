@@ -4,10 +4,10 @@
 public class PlayerHealth : MonoBehaviour
 {
     //CONFIG PARAMS
-    [SerializeField] int initialHearts = 3;
+    [SerializeField] float initialHealth = 1f;
 
     //STATS
-    int hearts;
+    float health;
 
     //CACHED CLASSES REFERENCES
     Player player;
@@ -16,19 +16,27 @@ public class PlayerHealth : MonoBehaviour
     internal void CustomStart()
     {
         player = GetComponent<Player>();
-        hearts = initialHearts;
+        health = initialHealth;
     }
 
-    internal void GainHeart()
+    internal void GainHealth()
     {
-        hearts++;
+        health = 1f;
     }
 
-    internal void ManageDamage()
+    private void LoseHealth(float damage)
     {
-        if(hearts > 1)
+        health -= damage;
+        player.healthDisplay.UpdateDisplay(health);
+    }
+
+    internal void ManageDamage(float damage)
+    {
+        LoseHealth(damage);
+
+        if (health > 0.001f)
         {
-            LoseHeart();
+            player.playerFX.PlayDamageVFX();
         }
         else
         {
@@ -36,15 +44,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void LoseHeart()
-    {
-        hearts--;
-        player.playerFX.PlayDamageVFX();
-    }
+
 
     internal void Die()
     {
-        hearts--;
         player.isAlive = false;
         player.rigidBody.useGravity = true;
         player.boxCollider.enabled = false;

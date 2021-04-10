@@ -40,7 +40,7 @@ public class Debugger : MonoBehaviour
             //Adds a life to the player            
             if (Input.GetKeyDown(KeyCode.L))
             {
-                player.playerHealth.GainHeart();
+                player.playerHealth.GainHealth();
             }
 
             //Adds A LOT of life to the current obstacles

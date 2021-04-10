@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ScoreBoard : MonoBehaviour
 {
@@ -11,6 +10,8 @@ public class ScoreBoard : MonoBehaviour
 
     private void Start()
     {
+        scoreDisplay.CustomStart();
+
         currentScore = 0;
         scoreDisplay.UpdateScore(currentScore);
     }
