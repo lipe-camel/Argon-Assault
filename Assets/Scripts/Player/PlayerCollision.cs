@@ -17,8 +17,10 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log($"{this.name}--collided with--{other.gameObject.transform.parent.name}");
-        player.playerHealth.ManageDamage(0.1f);
+        float damage = other.GetComponentInParent<Obstacle>().obstacleDamage.GetDamage();
+        player.playerHealth.ManageDamage(damage);
+
+        Debug.Log($"{this.name} collided with {other.gameObject.transform.parent.parent.name} and suffered {damage} damage. Life now is {player.playerHealth.health}");
     }
 
 

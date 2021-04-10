@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float initialHealth = 1f;
 
     //STATS
-    float health;
+    internal float health;
 
     //CACHED CLASSES REFERENCES
     Player player;
