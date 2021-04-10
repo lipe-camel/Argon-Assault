@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class ObstacleKiller : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        Destroy(other.gameObject);
+        var obstacle = other.GetComponentInParent<Obstacle>().gameObject;
+        if (obstacle)
+        {
+            Destroy(obstacle);
+        }
     }
 }

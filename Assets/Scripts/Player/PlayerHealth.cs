@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     internal void GainHealth()
     {
         health = 1f;
+        player.healthDisplay.UpdateDisplay(health);
     }
 
     private void LoseHealth(float damage)

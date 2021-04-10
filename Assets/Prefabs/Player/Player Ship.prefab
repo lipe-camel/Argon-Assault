@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4254083947953463568}
   - component: {fileID: 8406503217313729373}
   - component: {fileID: -2600090723831046844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,8 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHealth: 1
-  numberOfFlashes: 10
-  flashDuration: 0.1
 --- !u!114 &8406503217313729373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e0dcfb107ca4549ba84e7bce8709da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfFlashes: 10
+  flashDuration: 0.1
 --- !u!114 &-2600090723831046844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +247,10 @@ PrefabInstance:
     - target: {fileID: 182542, guid: 14bfac2497c548447930346462d70e78, type: 3}
       propertyPath: m_Name
       value: FX_FlameThrower 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 182542, guid: 14bfac2497c548447930346462d70e78, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 479346, guid: 14bfac2497c548447930346462d70e78, type: 3}
       propertyPath: m_RootOrder
@@ -448,6 +452,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mini Explosion VFX
       objectReference: {fileID: 0}
+    - target: {fileID: 3200836327345539238, guid: a7d4fb0d2b7e09f408298673d89ee3c6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7d4fb0d2b7e09f408298673d89ee3c6, type: 3}
 --- !u!4 &7908382221829518191 stripped
@@ -609,6 +618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Explosion VFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 3200836327345539238, guid: d2c744d78799a47488ef7b2f880fbb22,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2c744d78799a47488ef7b2f880fbb22, type: 3}
