@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerFire))]
 [RequireComponent(typeof(PlayerCollision))]
 [RequireComponent(typeof(PlayerHealth))]
+[RequireComponent(typeof(PlayerIFrames))]
 [RequireComponent(typeof(PlayerFX))]
 public class Player : MonoBehaviour
 {
@@ -20,11 +21,13 @@ public class Player : MonoBehaviour
     internal PlayerFire playerFire;
     internal PlayerCollision playerCollision;
     internal PlayerHealth playerHealth;
+    internal PlayerIFrames playerIFrames;
     internal PlayerFX playerFX;
 
     //CACHED COMPONENT REFERENCES
     internal Rigidbody rigidBody;
     internal BoxCollider boxCollider;
+    internal MeshRenderer meshRenderer;
 
     //CACHED EXTERNAL REFERENCES
     internal HealthDisplay healthDisplay;
@@ -43,10 +46,12 @@ public class Player : MonoBehaviour
         playerFire = GetComponent<PlayerFire>();
         playerCollision = GetComponent<PlayerCollision>();
         playerHealth = GetComponent<PlayerHealth>();
+        playerIFrames = GetComponent<PlayerIFrames>();
         playerFX = GetComponent<PlayerFX>();
 
         rigidBody = GetComponentInChildren<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
+        meshRenderer = GetComponent<MeshRenderer>();
 
         healthDisplay = FindObjectOfType<HealthDisplay>();
         sceneLoader = FindObjectOfType<SceneLoader>();
@@ -59,6 +64,7 @@ public class Player : MonoBehaviour
         playerFire.CustomStart();
         playerCollision.CustomStart();
         playerHealth.CustomStart();
+        playerIFrames.CustomStart();
         playerFX.CustomStart();
     }
 }

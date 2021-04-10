@@ -36,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (health > 0.001f)
         {
+            player.playerIFrames.ManageIframes();
             player.playerFX.PlayDamageVFX();
         }
         else
