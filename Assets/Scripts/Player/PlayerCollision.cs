@@ -8,7 +8,7 @@ public class PlayerCollision : MonoBehaviour
     Player player;
 
     //STATE
-    bool collisionsEnabled = true;
+    internal bool collisionsEnabled = true;
 
     internal void CustomStart()
     {
@@ -20,7 +20,7 @@ public class PlayerCollision : MonoBehaviour
         float damage = other.GetComponentInParent<Obstacle>().obstacleDamage.GetDamage();
         player.playerHealth.ManageDamage(damage);
 
-        Debug.Log($"{this.name} collided with {other.gameObject.transform.parent.parent.name} and suffered {damage} damage. Life now is {player.playerHealth.health}");
+        //Debug.Log($"{this.name} collided with {other.gameObject.transform.parent.parent.name} and suffered {damage} damage. Life now is {player.playerHealth.health}");
     }
 
 
@@ -30,6 +30,5 @@ public class PlayerCollision : MonoBehaviour
     {
         collisionsEnabled = !collisionsEnabled;
         player.boxCollider.enabled = collisionsEnabled;
-        Debug.Log($"Are collisions enabled? {collisionsEnabled}");
     }
 }
