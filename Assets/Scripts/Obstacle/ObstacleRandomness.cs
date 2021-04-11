@@ -108,6 +108,7 @@ internal class ObstacleRandomness : MonoBehaviour
     {
         float rndmScale = GetRandomScale(minSize, maxSize);
         model.transform.localScale = new Vector3(rndmScale, rndmScale, rndmScale);
+        obstacle.rigidBody.mass *= Mathf.Pow(rndmScale, 3);
     }
 
 

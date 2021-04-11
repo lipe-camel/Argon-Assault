@@ -19,7 +19,7 @@ public class PlayerIFrames : MonoBehaviour
     {
         int temp = 0;
         player.boxCollider.enabled = false;
-        Debug.Log($"{this.name} colliders are enabled? {player.boxCollider.enabled}");
+        //Debug.Log($"{this.name} colliders are enabled? {player.boxCollider.enabled}");
         while (temp < numberOfFlashes)
         {
             player.meshRenderer.enabled = false;
@@ -29,6 +29,6 @@ public class PlayerIFrames : MonoBehaviour
             temp++;
         }
         player.boxCollider.enabled = true;
-        Debug.Log($"{this.name} colliders are enabled? {player.boxCollider.enabled}");
+        //Debug.Log($"{this.name} colliders are enabled? {player.boxCollider.enabled}");
     }
 }

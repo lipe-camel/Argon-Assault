@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4153465682653890}
   - component: {fileID: 65566858718617196}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4992838361154946}
   - component: {fileID: 33449352577706184}
   - component: {fileID: 23261711451581766}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Asteroid Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,6 +139,10 @@ PrefabInstance:
     - target: {fileID: 182542, guid: 15c341f0def8088419d7b38886bb22ec, type: 3}
       propertyPath: m_Name
       value: Asteroid Red Trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 182542, guid: 15c341f0def8088419d7b38886bb22ec, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 479346, guid: 15c341f0def8088419d7b38886bb22ec, type: 3}
       propertyPath: m_RootOrder

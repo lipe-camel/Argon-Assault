@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4579553980399578}
   - component: {fileID: 33654856504627550}
   - component: {fileID: 23523893699283024}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Asteroid Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4924797358155618}
   - component: {fileID: 65043567231221950}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,6 +139,10 @@ PrefabInstance:
     - target: {fileID: 182542, guid: 7e85862d4a07e0a4eb9f28b38eda9977, type: 3}
       propertyPath: m_Name
       value: Asteroid Blue Trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 182542, guid: 7e85862d4a07e0a4eb9f28b38eda9977, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 479346, guid: 7e85862d4a07e0a4eb9f28b38eda9977, type: 3}
       propertyPath: m_RootOrder
