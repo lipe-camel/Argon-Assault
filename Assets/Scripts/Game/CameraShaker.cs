@@ -13,10 +13,6 @@ public class CameraShaker : MonoBehaviour
     //CACHED EXTERNAL REFERENCES
     CinemachineBasicMultiChannelPerlin cameraNoise;
 
-    //CACHED STRING REFERENCES
-    const string PLAYER_LAYER = "Player";
-
-
     private void Start()
     {
         cameraNoise = FindObjectOfType<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
@@ -26,21 +22,26 @@ public class CameraShaker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        float intenseCameraShake = other.GetComponentInParent<Obstacle>().obstacleModel.transform.localScale.x * shakerMultiplier;
-        if (intenseCameraShake <= defaultCameraShake) { intenseCameraShake = defaultCameraShake; }
+        if (other.GetComponentInParent<Obstacle>())
+        {
+            //this gets a value that is multiplied by the obstacles size
+            float intenseCameraShake = other.GetComponentInParent<Obstacle>().obstacleModel.transform.localScale.x * shakerMultiplier;
+            if (intenseCameraShake <= defaultCameraShake) { intenseCameraShake = defaultCameraShake; }
 
-        SetCameraShake(other, intenseCameraShake);
+            SetCameraShake(other, intenseCameraShake);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        SetCameraShake(other, defaultCameraShake);
+        if (other.GetComponentInParent<Obstacle>())
+        {
+            SetCameraShake(other, defaultCameraShake);
+        }
     }
 
     private void SetCameraShake(Collider other, float cameraShake)
     {
-        if (other.gameObject.layer == LayerMask.GetMask(PLAYER_LAYER)) { return; }
-
         Debug.Log(other.gameObject.transform.parent.parent.name);
         currentCameraShake = cameraShake;
         cameraNoise.m_AmplitudeGain = currentCameraShake;
