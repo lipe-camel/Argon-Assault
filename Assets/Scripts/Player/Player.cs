@@ -6,7 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerCollision))]
 [RequireComponent(typeof(PlayerHealth))]
 [RequireComponent(typeof(PlayerIFrames))]
-[RequireComponent(typeof(PlayerFX))]
+[RequireComponent(typeof(PlayerVFX))]
+[RequireComponent(typeof(PlayerSFX))]
 public class Player : MonoBehaviour
 {
     //INSPECTOR REFERENCES
@@ -22,7 +23,8 @@ public class Player : MonoBehaviour
     internal PlayerCollision playerCollision;
     internal PlayerHealth playerHealth;
     internal PlayerIFrames playerIFrames;
-    internal PlayerFX playerFX;
+    internal PlayerVFX playerVFX;
+    internal PlayerSFX playerSFX;
 
     //CACHED COMPONENT REFERENCES
     internal Rigidbody rigidBody;
@@ -47,7 +49,8 @@ public class Player : MonoBehaviour
         playerCollision = GetComponent<PlayerCollision>();
         playerHealth = GetComponent<PlayerHealth>();
         playerIFrames = GetComponent<PlayerIFrames>();
-        playerFX = GetComponent<PlayerFX>();
+        playerVFX = GetComponent<PlayerVFX>();
+        playerSFX = GetComponent<PlayerSFX>();
 
         rigidBody = GetComponentInChildren<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
@@ -65,6 +68,7 @@ public class Player : MonoBehaviour
         playerCollision.CustomStart();
         playerHealth.CustomStart();
         playerIFrames.CustomStart();
-        playerFX.CustomStart();
+        playerVFX.CustomStart();
+        playerSFX.CustomStart();
     }
 }

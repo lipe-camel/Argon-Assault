@@ -1,16 +1,12 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Player))]
-public class PlayerFX : MonoBehaviour
+public class PlayerVFX : MonoBehaviour
 {
     //CONFIG PARAMS
-    [Header("VFX")]
     [SerializeField] internal GameObject damageVFX;
     [SerializeField] internal GameObject deathVFX;
     [SerializeField] internal ParticleSystem[] secondaryParticles;
-
-    //CACHED CLASSES REFERENCES
-    Player player;
 
     //CACHED EXTERNAL REFERENCES
     GameObject particlesHolder;
@@ -21,7 +17,6 @@ public class PlayerFX : MonoBehaviour
 
     internal void CustomStart()
     {
-        player = GetComponent<Player>();
         FindParticlesHolder();
     }
 

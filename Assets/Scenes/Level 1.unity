@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 1.840099
+  m_AmplitudeGain: 0.9322
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!850595691 &410661383
@@ -921,31 +921,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 279582377058558702, guid: a026ddf85e21f5f408397bbd591ecc1c,
+    - target: {fileID: 3235887230620668023, guid: a026ddf85e21f5f408397bbd591ecc1c,
         type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 639043672432474461, guid: a026ddf85e21f5f408397bbd591ecc1c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 937820604871652169, guid: a026ddf85e21f5f408397bbd591ecc1c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1419468413071946818, guid: a026ddf85e21f5f408397bbd591ecc1c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3007328994161615343, guid: a026ddf85e21f5f408397bbd591ecc1c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
+      propertyPath: laserSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7468c2e1dd2dd60429319f5e8ed696a9, type: 3}
     - target: {fileID: 7827389219498688500, guid: a026ddf85e21f5f408397bbd591ecc1c,
         type: 3}
       propertyPath: m_RootOrder
@@ -1005,16 +985,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player Ship
-      objectReference: {fileID: 0}
-    - target: {fileID: 7830321628201592268, guid: a026ddf85e21f5f408397bbd591ecc1c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8266794442992597163, guid: a026ddf85e21f5f408397bbd591ecc1c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a026ddf85e21f5f408397bbd591ecc1c, type: 3}
@@ -1446,6 +1416,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle Killer
+      objectReference: {fileID: 0}
+    - target: {fileID: 571159455327327255, guid: 06fdae8dd965a544aa7fdeb4ecd35ea4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06fdae8dd965a544aa7fdeb4ecd35ea4, type: 3}

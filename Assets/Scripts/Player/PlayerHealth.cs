@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
         if (health > 0.001f)
         {
             StartCoroutine(player.playerIFrames.ManageIframes());
-            player.playerFX.PlayDamageVFX();
+            player.playerVFX.PlayDamageVFX();
         }
         else
         {
@@ -53,8 +53,8 @@ public class PlayerHealth : MonoBehaviour
         player.meshRenderer.enabled = false;
         player.boxCollider.enabled = false;
         player.playerFire.DisableLasers();
-        player.playerFX.DisableSecondaryParticles();
-        player.playerFX.PlayDeathVFX();
+        player.playerVFX.DisableSecondaryParticles();
+        player.playerVFX.PlayDeathVFX();
         player.sceneLoader.DeathRestart();
     }
 }
