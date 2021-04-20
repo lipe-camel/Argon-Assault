@@ -8,7 +8,7 @@ public class PlayerInput : MonoBehaviour
     //[SerializeField] InputAction movement;
     //[SerializeField] InputAction fire;
 
-    // CACHED REFERENCES
+    // CACHED INTERNAL REFERENCES
     Player player;
 
     //CACHED STRING REFERENCES
@@ -62,14 +62,15 @@ public class PlayerInput : MonoBehaviour
     private void ManageFireInput()
     {
         //if (fire.ReadValue<float>() > 0.5f)
-        if(Input.GetButton(FIRE_BUTTON))
+        if(Input.GetButtonDown(FIRE_BUTTON))
         {
-            StartCoroutine(player.playerSFX.PlayLaserSound());
+            player.playerSFX.PlayLaserSound();
             player.playerFire.SetLasersActive(true);
         }
-        else
+        if(Input.GetButtonUp(FIRE_BUTTON))
         {
             player.playerFire.SetLasersActive(false);
+
         }
     }
 }

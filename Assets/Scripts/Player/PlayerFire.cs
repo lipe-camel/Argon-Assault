@@ -17,12 +17,18 @@ public class PlayerFire : MonoBehaviour
     {
         foreach (ParticleSystem laser in player.lasers)
         {
-            var emissionModule = laser.emission;
-            emissionModule.enabled = isActive;
+            if (isActive)
+            {
+                laser.Play();
+            }
+            else
+            {
+                laser.Stop();
+            }
         }
     }
 
-    internal void DisableLasers()
+    internal void DisableLasers() //used when dead
     {
         foreach (ParticleSystem laser in player.lasers)
         {

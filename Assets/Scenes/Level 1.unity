@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0.9322
+  m_AmplitudeGain: 0.8837659
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!850595691 &410661383
@@ -926,6 +926,11 @@ PrefabInstance:
       propertyPath: laserSound
       value: 
       objectReference: {fileID: 8300000, guid: 7468c2e1dd2dd60429319f5e8ed696a9, type: 3}
+    - target: {fileID: 3235887230620668023, guid: a026ddf85e21f5f408397bbd591ecc1c,
+        type: 3}
+      propertyPath: timeBetweenShots
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7827389219498688500, guid: a026ddf85e21f5f408397bbd591ecc1c,
         type: 3}
       propertyPath: m_RootOrder
