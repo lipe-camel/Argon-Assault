@@ -42,7 +42,7 @@ public class CameraShaker : MonoBehaviour
 
     private void SetCameraShake(Collider other, float cameraShake)
     {
-        Debug.Log(other.gameObject.transform.parent.parent.name);
+        //Debug.Log(other.gameObject.transform.parent.parent.name);
         currentCameraShake = cameraShake;
         cameraNoise.m_AmplitudeGain = currentCameraShake;
     }

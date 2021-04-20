@@ -19,6 +19,7 @@ public class Obstacle : MonoBehaviour
     internal ObstacleCollision obstacleCollision;
     internal ObstacleHealth obstacleHealth;
     internal ObstacleDamage obstacleDamage;
+    internal ObstacleSFX obstacleSFX;
     internal ObstacleParticles obstacleParticles;
     internal ObstacleExplosion obstacleExplosion;
     internal ObstacleScore obstacleScore;
@@ -43,6 +44,7 @@ public class Obstacle : MonoBehaviour
         obstacleCollision = GetComponent<ObstacleCollision>();
         obstacleHealth = GetComponent<ObstacleHealth>();
         obstacleDamage = GetComponent<ObstacleDamage>();
+        obstacleSFX = GetComponent<ObstacleSFX>();
         obstacleParticles = GetComponent<ObstacleParticles>();
         obstacleExplosion = GetComponent<ObstacleExplosion>();
         obstacleScore = GetComponent<ObstacleScore>();
@@ -59,6 +61,7 @@ public class Obstacle : MonoBehaviour
         obstacleCollision.CustomStart();
         obstacleHealth.CustomStart();
         obstacleDamage.CustomStart();
+        obstacleSFX.CustomStart();
         obstacleParticles.CustomStart();
         obstacleExplosion.CustomStart();
         obstacleScore.CustomStart();
