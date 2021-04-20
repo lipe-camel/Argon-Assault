@@ -70,7 +70,6 @@ public class PlayerInput : MonoBehaviour
         if(Input.GetButtonUp(FIRE_BUTTON))
         {
             player.playerFire.SetLasersActive(false);
-
         }
     }
 }
