@@ -11,12 +11,12 @@ internal class ObstacleSFX : MonoBehaviour
     {
     }
 
-    internal void PlayDamageSound()
+    internal void PlayDamageSFX()
     {
         AudioSource.PlayClipAtPoint(GetRandomAudio(damageSounds), Camera.main.transform.position, audioVolume);
     }
 
-    internal void PlayDeathSound()
+    internal void PlayDeathSFX()
     {
         AudioSource.PlayClipAtPoint(GetRandomAudio(deathSounds), Camera.main.transform.position, audioVolume);
     }

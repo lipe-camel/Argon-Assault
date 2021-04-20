@@ -37,14 +37,14 @@ internal class ObstacleHealth : MonoBehaviour
     private void LoseHealth(Vector3 instantiatePos)
     {
         obstacle.obstacleParticles.PlayDamageVFX(instantiatePos);
-        obstacle.obstacleSFX.PlayDamageSound();
+        obstacle.obstacleSFX.PlayDamageSFX();
         obstacle.obstacleMovement.DecreaseSpeed();
     }
 
     internal void Die()
     {
         obstacle.scoreBoard.AddToScore(obstacle.obstacleScore.GetobstacleScoreValue());
-        obstacle.obstacleSFX.PlayDeathSound();
+        obstacle.obstacleSFX.PlayDeathSFX();
         obstacle.obstacleExplosion.Explode(transform.position);
     }
 

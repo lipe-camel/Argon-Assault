@@ -64,7 +64,7 @@ public class PlayerInput : MonoBehaviour
         //if (fire.ReadValue<float>() > 0.5f)
         if(Input.GetButtonDown(FIRE_BUTTON))
         {
-            player.playerSFX.PlayLaserSound();
+            player.playerSFX.PlayLaserSFX();
             player.playerFire.SetLasersActive(true);
         }
         if(Input.GetButtonUp(FIRE_BUTTON))
