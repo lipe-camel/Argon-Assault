@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ObstacleKiller : MonoBehaviour
 {
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         var obstacle = other.GetComponentInParent<Obstacle>().gameObject;
         if (obstacle)
