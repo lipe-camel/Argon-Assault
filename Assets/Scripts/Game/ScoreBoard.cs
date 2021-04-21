@@ -13,19 +13,28 @@ public class ScoreBoard : MonoBehaviour
         scoreDisplay.CustomStart();
 
         currentScore = 0;
-        scoreDisplay.UpdateScore(currentScore);
+        if (scoreDisplay)
+        {
+            scoreDisplay.UpdateScore(currentScore);
+        }
     }
 
 
     public void AddToScore(int score)
     {
         currentScore += score;
-        scoreDisplay.UpdateScore(currentScore);
+        if (scoreDisplay)
+        {
+            scoreDisplay.UpdateScore(currentScore);
+        }
     }
 
     public void SubtractToScore(int score)
     {
         currentScore -= score;
-        scoreDisplay.UpdateScore(currentScore);
+        if (scoreDisplay)
+        {
+            scoreDisplay.UpdateScore(currentScore);
+        }
     }
 }

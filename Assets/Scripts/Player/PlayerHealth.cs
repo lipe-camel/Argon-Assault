@@ -28,7 +28,10 @@ public class PlayerHealth : MonoBehaviour
     private void LoseHealth(float damage)
     {
         health -= damage;
-        player.healthDisplay.UpdateDisplay(health);
+        if (player.healthDisplay)
+        {
+            player.healthDisplay.UpdateDisplay(health);
+        }
     }
 
     internal void ManageDamage(float damage)
