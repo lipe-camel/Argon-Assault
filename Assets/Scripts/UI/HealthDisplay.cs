@@ -3,15 +3,15 @@ using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
-    Slider slider;
+    //Slider slider;
 
-    private void Start()
-    {
-        slider = GetComponent<Slider>();
-    }
+    //private void Start()
+    //{
+    //    slider = GetComponent<Slider>();
+    //}
 
     public void UpdateDisplay(float health)
     {
-        slider.value = health;
+        GetComponent<Slider>().value = health;
     }
 }

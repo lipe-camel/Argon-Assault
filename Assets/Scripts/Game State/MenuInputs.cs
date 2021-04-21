@@ -13,6 +13,16 @@ internal class MenuInputs : MonoBehaviour
 
     private void Update()
     {
+        //if (gameState.currentState == GameState.State.SplashScreen)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.Space))
+        //    {
+        //        StartCoroutine(gameState.ShowScreen(
+        //            GameState.State.TitleScreen, gameState.titleScreen, gameState.clickSFX));
+        //        StopCoroutine(gameState.ShowSplashScreen());
+        //    }
+        //}
+
         if (gameState.currentState == GameState.State.TitleScreen)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -26,7 +36,7 @@ internal class MenuInputs : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                gameState.startGame.StartNewGame();
+                StartCoroutine(gameState.startGame.StartNewGame());
             }
         }
 
@@ -34,7 +44,7 @@ internal class MenuInputs : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                gameState.startGame.StartNewGame();
+                StartCoroutine(gameState.startGame.StartNewGame());
 
             }
             if (Input.GetKeyDown(KeyCode.C))
@@ -49,7 +59,7 @@ internal class MenuInputs : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                gameState.startGame.StartNewGame();
+                StartCoroutine(gameState.startGame.StartNewGame());
             }
         }
     }

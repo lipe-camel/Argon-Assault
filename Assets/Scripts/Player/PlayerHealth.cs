@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     {
         player = GetComponent<Player>();
         health = initialHealth;
+        player.healthDisplay.UpdateDisplay(health);
     }
 
     internal void GainHealth()
@@ -46,28 +47,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            Die();
+            player.Despawn();
         }
-    }
-
-    internal void Die()
-    {
-        player.playerSFX.PlayDeathSFX();
-        player.playerVFX.PlayDeathVFX();
-        player.isAlive = false;
-        player.meshRenderer.enabled = false;
-        player.boxCollider.enabled = false;
-        player.playerFire.ToggleLasers(false);
-        player.playerVFX.ToggleSecondaryParticles(false);
-        StartCoroutine(player.gameState.ShowEndScreen());
-    }
-
-    internal void Spawn()
-    {
-        player.isAlive = true;
-        player.meshRenderer.enabled = true;
-        player.boxCollider.enabled = true;
-        player.playerFire.ToggleLasers(true);
-        player.playerVFX.ToggleSecondaryParticles(true);
     }
 }

@@ -30,6 +30,7 @@ internal class ObstacleHealth : MonoBehaviour
         }
         else
         {
+            obstacle.scoreBoard.AddToScore(obstacle.obstacleScore.GetobstacleScoreValue());
             Die();
         }
     }
@@ -43,7 +44,6 @@ internal class ObstacleHealth : MonoBehaviour
 
     internal void Die()
     {
-        obstacle.scoreBoard.AddToScore(obstacle.obstacleScore.GetobstacleScoreValue());
         obstacle.obstacleSFX.PlayDeathSFX();
         obstacle.obstacleExplosion.Explode(transform.position);
     }

@@ -20,7 +20,7 @@ public class GameState : MonoBehaviour
     [Header("Time")]
     [SerializeField] float splashScreenTime = 2f;
     [SerializeField] float deathTime = 2f;
-    [SerializeField] float clearScreenTime = 0.25f;
+    [SerializeField] internal float clearScreenTime = 0.25f;
 
     [Header("Audio")]
     [SerializeField] internal AudioClip splashSFX;
@@ -69,8 +69,8 @@ public class GameState : MonoBehaviour
         {
             gameElement.SetActive(false);
         }
-        obstacleSpawner.Spawn(false);
-        //player.playerHealth.Die();
+        obstacleSpawner.ToggleSpawn(false);
+        player.gameObject.SetActive(false);
     }
 
 
@@ -120,9 +120,11 @@ public class GameState : MonoBehaviour
         {
             gameElement.SetActive(false);
         }
+        currentScreen.SetActive(false);
         currentState = State.EndScreen;
         currentScreen = endScreen;
         endScreen.SetActive(true);
         scoreBoard.ShowFinalScore();
+        obstacleSpawner.ToggleSpawn(false);
     }
 }

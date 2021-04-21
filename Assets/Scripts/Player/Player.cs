@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
         StartCustomStarts();
     }
 
-    private void GetCachedReferences()
+    internal void GetCachedReferences()
     {
         playerInput = GetComponent<PlayerInput>();
         playerMovement = GetComponent<PlayerMovement>();
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
         gameState = FindObjectOfType<GameState>();
     }
 
-    private void StartCustomStarts()
+    internal void StartCustomStarts()
     {
         playerInput.CustomStart();
         playerMovement.CustomStart();
@@ -72,5 +72,31 @@ public class Player : MonoBehaviour
         playerIFrames.CustomStart();
         playerVFX.CustomStart();
         playerSFX.CustomStart();
+    }
+
+
+    internal void Despawn()
+    {
+        playerSFX.PlayDeathSFX();
+        playerVFX.PlayDeathVFX();
+        isAlive = false;
+        meshRenderer.enabled = false;
+        boxCollider.enabled = false;
+        playerFire.ToggleLasers(false);
+        playerVFX.ToggleSecondaryParticles(false);
+        StartCoroutine(gameState.ShowEndScreen());
+    }
+
+    internal void Spawn()
+    {
+        gameObject.SetActive(true);
+        GetCachedReferences();
+        StartCustomStarts();
+        isAlive = true;
+        meshRenderer.enabled = true;
+        boxCollider.enabled = true;
+        playerFire.ToggleLasers(true);
+        playerVFX.ToggleSecondaryParticles(true);
+        StartCoroutine(playerIFrames.ManageIframes());
     }
 }

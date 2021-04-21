@@ -6,15 +6,8 @@ public class Debugger : MonoBehaviour
 {
     [TextArea(20, 30)] [SerializeField] string DebuggerNotes;
 
-    //CACHED EXTERNAL REFERENCES
-    Player player;
     Obstacle[] obstacles;
 
-
-    private void Start()
-    {
-        player = FindObjectOfType<Player>();
-    }
 
     private void Update()
     {
@@ -30,21 +23,21 @@ public class Debugger : MonoBehaviour
             //Toggle the player collisions
             if (Input.GetKeyDown(KeyCode.G))
             {
-                player.playerCollision.ToggleCollision();
-                Debug.Log($"Are collisions enabled? {player.playerCollision.collisionsEnabled}");
+                FindObjectOfType<Player>().playerCollision.ToggleCollision();
+                Debug.Log($"Are collisions enabled? {FindObjectOfType<Player>().playerCollision.collisionsEnabled}");
             }
 
             //Kill the player
             if (Input.GetKeyDown(KeyCode.K))
             {
-                player.playerHealth.Die();
+                FindObjectOfType<Player>().Despawn();
                 Debug.Log("The player is DEAD! F's in the chat bois");
             }
 
             //Adds a life to the player            
             if (Input.GetKeyDown(KeyCode.L))
             {
-                player.playerHealth.GainHealth();
+                FindObjectOfType<Player>().playerHealth.GainHealth();
                 Debug.Log("Player life restored, now THAT'S cheating");
             }
 
@@ -62,11 +55,7 @@ public class Debugger : MonoBehaviour
             //Destroy all obstacles
             if (Input.GetKeyDown(KeyCode.B))
             {
-                obstacles = FindObjectsOfType<Obstacle>();
-                foreach (Obstacle obstacle in obstacles)
-                {
-                    obstacle.obstacleHealth.Die();
-                }
+                FindObjectOfType<ObstacleSpawner>().DespawnAllObstacles();
                 Debug.Log($"All obstacles destroyed");
             }
 

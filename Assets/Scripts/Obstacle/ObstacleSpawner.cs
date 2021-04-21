@@ -10,22 +10,24 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] float maxSpawnDelay = 5f;
 
     //STATES
-    //public bool spawn;
+    bool spawn;
     int obstacleCount;
+    Obstacle[] obstacles;
 
-    private void Start()
-    {
-        StartCoroutine(Spawn(true));
-    }
 
-    public IEnumerator Spawn(bool spawn)
+    public IEnumerator Spawn()
     {   
-
         while (spawn)
         {
             yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
             SpawnObstacle();
         }
+    }
+
+    public void ToggleSpawn(bool isActive)
+    {
+        spawn = isActive;
+        StartCoroutine(Spawn());
     }
 
     private void SpawnObstacle()
@@ -43,5 +45,14 @@ public class ObstacleSpawner : MonoBehaviour
         //RENAME OBSTACLE
         spawnedObstacle.gameObject.name = $"Obstacle ({obstacleCount})";
         obstacleCount++;
+    }
+
+    public void DespawnAllObstacles()
+    {
+        obstacles = FindObjectsOfType<Obstacle>();
+        foreach (Obstacle obstacle in obstacles)
+        {
+            obstacle.obstacleHealth.Die();
+        }
     }
 }
