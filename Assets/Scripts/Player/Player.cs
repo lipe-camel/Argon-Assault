@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     //CACHED EXTERNAL REFERENCES
     internal HealthDisplay healthDisplay;
     internal SceneLoader sceneLoader;
+    internal GameState gameState;
 
     void Start()
     {
@@ -58,6 +59,7 @@ public class Player : MonoBehaviour
 
         healthDisplay = FindObjectOfType<HealthDisplay>();
         sceneLoader = FindObjectOfType<SceneLoader>();
+        gameState = FindObjectOfType<GameState>();
     }
 
     private void StartCustomStarts()

@@ -159,6 +159,12 @@ MonoBehaviour:
   m_AmplitudeGain: 0.5
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!1 &195920285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7043343822444919144, guid: a336e274d4eb11f43864eea28fca5094,
+    type: 3}
+  m_PrefabInstance: {fileID: 1941407158758737079}
+  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &410661383
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -265,10 +271,13 @@ MonoBehaviour:
   - {fileID: 35728357}
   - {fileID: 2130890366}
   - {fileID: 1512732437}
+  - {fileID: 195920285}
+  - {fileID: 1856682415}
   splashScreen: {fileID: 24559422}
   titleScreen: {fileID: 1044716987}
   tutorialScreen: {fileID: 1511530140}
   endScreen: {fileID: 1458377018}
+  creditsScreen: {fileID: 1535760164}
   splashScreenTime: 4
   clearScreenTime: 0.25
   splashSFX: {fileID: 8300000, guid: d84962ed172f9f64dbd0fedab10dcbd8, type: 3}
@@ -716,6 +725,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1535760164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2895611856175569714, guid: 350f52d8c917bd442b87c97e880cb160,
+    type: 3}
+  m_PrefabInstance: {fileID: 2895611856821996566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1848073611
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +761,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1856682415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1729056378860069979, guid: aa41d2bca2bcef340b50dcccd54212d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1729056378993176700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2060006138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1513,7 +1534,7 @@ PrefabInstance:
     - target: {fileID: 1957062714948507167, guid: a336e274d4eb11f43864eea28fca5094,
         type: 3}
       propertyPath: DebuggerNotes
-      value: '"C" Toggles the player collisions;
+      value: '"G" Toggles the player collisions;
 
         "K" Kills the player;
 

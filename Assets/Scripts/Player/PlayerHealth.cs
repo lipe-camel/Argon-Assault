@@ -59,6 +59,6 @@ public class PlayerHealth : MonoBehaviour
         player.boxCollider.enabled = false;
         player.playerFire.DisableLasers();
         player.playerVFX.DisableSecondaryParticles();
-        player.sceneLoader.DeathRestart();
+        StartCoroutine(player.gameState.ManageEndScreen());
     }
 }

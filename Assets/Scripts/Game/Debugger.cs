@@ -28,7 +28,7 @@ public class Debugger : MonoBehaviour
         {
 
             //Toggle the player collisions
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.G))
             {
                 player.playerCollision.ToggleCollision();
                 Debug.Log($"Are collisions enabled? {player.playerCollision.collisionsEnabled}");

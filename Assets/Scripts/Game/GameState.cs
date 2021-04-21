@@ -6,7 +6,7 @@ public class GameState : MonoBehaviour
     //CONFIG PARAMS
     [Header("Screens")]
     [SerializeField] GameObject[] gameElements;
-    [SerializeField] GameObject splashScreen, titleScreen, tutorialScreen, endScreen;
+    [SerializeField] GameObject splashScreen, titleScreen, tutorialScreen, endScreen, creditsScreen;
     [Header("Time")]
     [SerializeField] float splashScreenTime = 2f;
     [SerializeField] float clearScreenTime = 0.25f;
@@ -18,7 +18,7 @@ public class GameState : MonoBehaviour
     [SerializeField] float SFXVolume = 0.4f;
 
     //STATE
-    enum Screen { SplashScreen, TitleScreen, TutorialScreen, GameScreen, EndScreen};
+    enum Screen { SplashScreen, TitleScreen, TutorialScreen, GameScreen, EndScreen, CreditsScreen};
     Screen currentScreen;
 
 
@@ -28,6 +28,7 @@ public class GameState : MonoBehaviour
         titleScreen.SetActive(false);
         tutorialScreen.SetActive(false);
         endScreen.SetActive(false);
+        creditsScreen.SetActive(false);
         foreach (GameObject gameElement in gameElements)
         {
             gameElement.SetActive(false);
@@ -47,6 +48,26 @@ public class GameState : MonoBehaviour
         }
 
         if (currentScreen == Screen.TutorialScreen)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                StartCoroutine(ManageGameScreen());
+            }
+        }
+
+        if (currentScreen == Screen.EndScreen)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                StartCoroutine(ManageGameScreen());
+            }
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                StartCoroutine(ManageCreditsScreen());
+            }
+        }
+
+        if(currentScreen == Screen.CreditsScreen)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -89,6 +110,8 @@ public class GameState : MonoBehaviour
     private IEnumerator ManageGameScreen()
     {
         tutorialScreen.SetActive(false);
+        endScreen.SetActive(false);
+        creditsScreen.SetActive(false);
         AudioSource.PlayClipAtPoint(startSFX, Camera.main.transform.position, SFXVolume);
         yield return new WaitForSeconds(clearScreenTime);
         currentScreen = Screen.GameScreen;
@@ -97,5 +120,24 @@ public class GameState : MonoBehaviour
         {
             gameElement.SetActive(true);
         }
+    }
+
+    public IEnumerator ManageEndScreen()
+    {
+        yield return new WaitForSeconds(2f);
+        foreach (GameObject gameElement in gameElements)
+        {
+            gameElement.SetActive(false);
+        }
+        currentScreen = Screen.EndScreen;
+        endScreen.SetActive(true);
+    }
+
+    private IEnumerator ManageCreditsScreen()
+    {
+        endScreen.SetActive(false);
+        yield return new WaitForSeconds(clearScreenTime);
+        currentScreen = Screen.CreditsScreen;
+        creditsScreen.SetActive(true);
     }
 }
