@@ -7,7 +7,6 @@ public class GameState : MonoBehaviour
 {
     //CONFIG PARAMS
     [Header("Game")]
-    [SerializeField] internal GameObject[] gameElements;
     [SerializeField] internal Player player;
     [SerializeField] internal ObstacleSpawner obstacleSpawner;
     [SerializeField] internal ScoreBoard scoreBoard;
@@ -65,10 +64,6 @@ public class GameState : MonoBehaviour
         endScreen.SetActive(false);
         creditsScreen.SetActive(false);
 
-        foreach (GameObject gameElement in gameElements)
-        {
-            gameElement.SetActive(false);
-        }
         obstacleSpawner.ToggleSpawn(false);
         player.gameObject.SetActive(false);
     }
@@ -116,10 +111,6 @@ public class GameState : MonoBehaviour
     {
         yield return new WaitForSeconds(deathTime);
 
-        foreach (GameObject gameElement in gameElements)
-        {
-            gameElement.SetActive(false);
-        }
         currentScreen.SetActive(false);
         currentState = State.EndScreen;
         currentScreen = endScreen;

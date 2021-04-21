@@ -16,10 +16,7 @@ internal class StartGame : MonoBehaviour
     internal IEnumerator StartNewGame()
     {
         StartCoroutine(gameState.ShowScreen(GameState.State.GameScreen, gameState.gameScreen, gameState.startSFX));
-        foreach (GameObject gameElement in gameState.gameElements)
-        {
-            gameElement.SetActive(true);
-        }
+        gameState.scoreBoard.ResetScore();
         gameState.obstacleSpawner.DespawnAllObstacles();
         gameState.obstacleSpawner.ToggleSpawn(true);
         yield return new WaitForSeconds(gameState.clearScreenTime);

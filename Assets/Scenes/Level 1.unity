@@ -159,12 +159,6 @@ MonoBehaviour:
   m_AmplitudeGain: 0.5
   m_FrequencyGain: 1
   mNoiseOffsets: {x: 0, y: 0, z: 0}
---- !u!1 &195920285 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7043343822444919144, guid: a336e274d4eb11f43864eea28fca5094,
-    type: 3}
-  m_PrefabInstance: {fileID: 1941407158758737079}
-  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &410661383
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -2208,7 +2202,7 @@ PrefabInstance:
     - target: {fileID: 6473387382223587291, guid: cd94582e92888024cbdc555587926c3b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6473387382223587292, guid: cd94582e92888024cbdc555587926c3b,
         type: 3}
@@ -2262,9 +2256,14 @@ PrefabInstance:
       objectReference: {fileID: 1512732438}
     - target: {fileID: 6473387382223587292, guid: cd94582e92888024cbdc555587926c3b,
         type: 3}
+      propertyPath: gameElements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473387382223587292, guid: cd94582e92888024cbdc555587926c3b,
+        type: 3}
       propertyPath: gameElements.Array.data[0]
       value: 
-      objectReference: {fileID: 195920285}
+      objectReference: {fileID: 0}
     - target: {fileID: 6473387382223587292, guid: cd94582e92888024cbdc555587926c3b,
         type: 3}
       propertyPath: gameElements.Array.data[1]

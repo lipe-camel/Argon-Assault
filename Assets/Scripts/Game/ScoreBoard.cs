@@ -12,11 +12,7 @@ public class ScoreBoard : MonoBehaviour
     {
         scoreDisplay.CustomStart();
 
-        currentScore = 0;
-        if (scoreDisplay)
-        {
-            scoreDisplay.UpdateScore(currentScore);
-        }
+        ResetScore();
     }
 
 
@@ -42,5 +38,14 @@ public class ScoreBoard : MonoBehaviour
     {
         Debug.Log($"my score is {currentScore}");
         finalScoreDisplay.UpdateScore(currentScore);
+    }
+
+    public void ResetScore()
+    {
+        currentScore = 0;
+        if (scoreDisplay)
+        {
+            scoreDisplay.UpdateScore(currentScore);
+        }
     }
 }
