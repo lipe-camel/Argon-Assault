@@ -1,28 +1,49 @@
 using System.Collections;
 using UnityEngine;
 
+
+[RequireComponent(typeof(MenuInputs))]
 public class GameState : MonoBehaviour
 {
     //CONFIG PARAMS
     [Header("Screens")]
     [SerializeField] GameObject[] gameElements;
-    [SerializeField] GameObject splashScreen, titleScreen, tutorialScreen, endScreen, creditsScreen;
+    [SerializeField] internal GameObject splashScreen, titleScreen, tutorialScreen, endScreen, creditsScreen;
     [Header("Time")]
     [SerializeField] float splashScreenTime = 2f;
+    [SerializeField] float deathTime = 2f;
     [SerializeField] float clearScreenTime = 0.25f;
     [Header("Audio")]
-    [SerializeField] AudioClip splashSFX;
-    [SerializeField] AudioClip clickSFX;
-    [SerializeField] AudioClip titleSFX;
-    [SerializeField] AudioClip startSFX;
+    [SerializeField] internal AudioClip splashSFX;
+    [SerializeField] internal AudioClip clickSFX;
+    [SerializeField] internal AudioClip titleSFX;
+    [SerializeField] internal AudioClip startSFX;
     [SerializeField] float SFXVolume = 0.4f;
 
     //STATE
-    enum Screen { SplashScreen, TitleScreen, TutorialScreen, GameScreen, EndScreen, CreditsScreen};
-    Screen currentScreen;
+    internal enum State { SplashScreen, TitleScreen, TutorialScreen, GameScreen, EndScreen, CreditsScreen};
+    internal State currentState;
+    internal GameObject currentScreen;
+
+    //CACHED INTERNAL REFERENCES
+    internal MenuInputs menuInputs;
 
 
+    //START
     private void Start()
+    {
+        ManageInternalClasses();
+        DeactivateAllScreens();
+        StartCoroutine(ShowSplashScreen());
+    }
+
+    private void ManageInternalClasses()
+    {
+        menuInputs = GetComponent<MenuInputs>();
+        menuInputs.CustomStart();
+    }
+
+    private void DeactivateAllScreens()
     {
         splashScreen.SetActive(false);
         titleScreen.SetActive(false);
@@ -33,111 +54,67 @@ public class GameState : MonoBehaviour
         {
             gameElement.SetActive(false);
         }
-
-        StartCoroutine(ManageSplashScreen());
     }
 
-    private void Update()
+
+    //MANAGE SCREENS
+    internal IEnumerator ShowScreen(State state, GameObject screen, AudioClip SFX)
     {
-        if(currentScreen == Screen.TitleScreen)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                StartCoroutine(ManageTutorialScreen());
-            }
-        }
+        AudioSource.PlayClipAtPoint(SFX, Camera.main.transform.position, SFXVolume);
 
-        if (currentScreen == Screen.TutorialScreen)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                StartCoroutine(ManageGameScreen());
-            }
-        }
-
-        if (currentScreen == Screen.EndScreen)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                StartCoroutine(ManageGameScreen());
-            }
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                StartCoroutine(ManageCreditsScreen());
-            }
-        }
-
-        if(currentScreen == Screen.CreditsScreen)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                StartCoroutine(ManageGameScreen());
-            }
-        }
+        currentScreen.SetActive(false);
+        yield return new WaitForSeconds(clearScreenTime);
+        currentState = state;
+        currentScreen = screen;
+        currentScreen.SetActive(true);
+    }
+    internal IEnumerator ShowScreen(State state, GameObject screen)
+    {
+        currentScreen.SetActive(false);
+        yield return new WaitForSeconds(clearScreenTime);
+        currentState = state;
+        currentScreen = screen;
+        currentScreen.SetActive(true);
     }
 
-    private IEnumerator ManageSplashScreen()
+
+    internal IEnumerator ShowSplashScreen()
     {
-        currentScreen = Screen.SplashScreen;
         splashScreen.SetActive(true);
-        Debug.Log(currentScreen);
+        currentScreen = splashScreen;
+        currentState = State.SplashScreen;
+
         yield return new WaitForSeconds(splashScreenTime /8);
         AudioSource.PlayClipAtPoint(splashSFX, Camera.main.transform.position, SFXVolume);
+
         yield return new WaitForSeconds(splashScreenTime * 7/8);
-        splashScreen.SetActive(false);
-        yield return new WaitForSeconds(clearScreenTime);
-        ManageTitleScreen();
+
+        StartCoroutine(ShowScreen(State.TitleScreen, titleScreen, titleSFX));
     }
 
-    private void ManageTitleScreen()
+    internal IEnumerator StartGame()
     {
-        AudioSource.PlayClipAtPoint(titleSFX, Camera.main.transform.position, SFXVolume);
-        currentScreen = Screen.TitleScreen;
-        Debug.Log(currentScreen);
-        titleScreen.SetActive(true);
-    }
-
-    private IEnumerator ManageTutorialScreen()
-    {
-        titleScreen.SetActive(false);
-        AudioSource.PlayClipAtPoint(clickSFX, Camera.main.transform.position, SFXVolume);
-        yield return new WaitForSeconds(clearScreenTime);
-        currentScreen = Screen.TutorialScreen;
-        Debug.Log(currentScreen);
-        tutorialScreen.SetActive(true);
-    }
-
-    private IEnumerator ManageGameScreen()
-    {
-        tutorialScreen.SetActive(false);
-        endScreen.SetActive(false);
-        creditsScreen.SetActive(false);
         AudioSource.PlayClipAtPoint(startSFX, Camera.main.transform.position, SFXVolume);
+        
+        currentScreen.SetActive(false);
         yield return new WaitForSeconds(clearScreenTime);
-        currentScreen = Screen.GameScreen;
-        Debug.Log(currentScreen);
+        currentState = State.GameScreen;
         foreach (GameObject gameElement in gameElements)
         {
             gameElement.SetActive(true);
         }
     }
 
-    public IEnumerator ManageEndScreen()
+    public IEnumerator ShowEndScreen()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(deathTime);
+
         foreach (GameObject gameElement in gameElements)
         {
             gameElement.SetActive(false);
         }
-        currentScreen = Screen.EndScreen;
+        currentState = State.EndScreen;
+        currentScreen = endScreen;
         endScreen.SetActive(true);
-    }
-
-    private IEnumerator ManageCreditsScreen()
-    {
-        endScreen.SetActive(false);
-        yield return new WaitForSeconds(clearScreenTime);
-        currentScreen = Screen.CreditsScreen;
-        creditsScreen.SetActive(true);
     }
 }

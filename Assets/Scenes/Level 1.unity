@@ -248,6 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 570031429}
   - component: {fileID: 570031428}
+  - component: {fileID: 570031430}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -279,6 +280,7 @@ MonoBehaviour:
   endScreen: {fileID: 1458377018}
   creditsScreen: {fileID: 1535760164}
   splashScreenTime: 4
+  deathTime: 2
   clearScreenTime: 0.25
   splashSFX: {fileID: 8300000, guid: d84962ed172f9f64dbd0fedab10dcbd8, type: 3}
   clickSFX: {fileID: 8300000, guid: a5787aedf9338894c9a5c9565810972a, type: 3}
@@ -299,6 +301,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &570031430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570031427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2476c924b1042547b2772db9a5e4dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!108 &705507994 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 5206429773405774036, guid: 85edeee6d4f11e247b447d991c15a2b8,
