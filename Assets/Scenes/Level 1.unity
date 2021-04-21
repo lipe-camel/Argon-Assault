@@ -261,16 +261,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc24e3bdedbcd348bb68e08ff41c2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashScreen: {fileID: 24559422}
-  titleScreen: {fileID: 1044716987}
-  tutorialScreen: {fileID: 1511530140}
-  endScreen: {fileID: 1458377018}
   gameElements:
   - {fileID: 35728357}
   - {fileID: 2130890366}
   - {fileID: 1512732437}
-  splashScreenTime: 2
-  clearScreenTime: 0.5
+  splashScreen: {fileID: 24559422}
+  titleScreen: {fileID: 1044716987}
+  tutorialScreen: {fileID: 1511530140}
+  endScreen: {fileID: 1458377018}
+  splashScreenTime: 4
+  clearScreenTime: 0.25
+  splashSFX: {fileID: 8300000, guid: d84962ed172f9f64dbd0fedab10dcbd8, type: 3}
+  clickSFX: {fileID: 8300000, guid: a5787aedf9338894c9a5c9565810972a, type: 3}
+  titleSFX: {fileID: 8300000, guid: a5787aedf9338894c9a5c9565810972a, type: 3}
+  startSFX: {fileID: 8300000, guid: c06fb2f1314e8ed47a24c3146bbef480, type: 3}
+  SFXVolume: 0.4
 --- !u!4 &570031429
 Transform:
   m_ObjectHideFlags: 0

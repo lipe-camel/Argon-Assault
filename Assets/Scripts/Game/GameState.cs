@@ -1,16 +1,21 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
     //CONFIG PARAMS
-    [SerializeField] GameObject splashScreen, titleScreen, tutorialScreen, endScreen;
+    [Header("Screens")]
     [SerializeField] GameObject[] gameElements;
-    [SerializeField] float
-        splashScreenTime = 2f,
-        clearScreenTime = 0.5f;
-
+    [SerializeField] GameObject splashScreen, titleScreen, tutorialScreen, endScreen;
+    [Header("Time")]
+    [SerializeField] float splashScreenTime = 2f;
+    [SerializeField] float clearScreenTime = 0.25f;
+    [Header("Audio")]
+    [SerializeField] AudioClip splashSFX;
+    [SerializeField] AudioClip clickSFX;
+    [SerializeField] AudioClip titleSFX;
+    [SerializeField] AudioClip startSFX;
+    [SerializeField] float SFXVolume = 0.4f;
 
     //STATE
     enum Screen { SplashScreen, TitleScreen, TutorialScreen, GameScreen, EndScreen};
@@ -55,7 +60,9 @@ public class GameState : MonoBehaviour
         currentScreen = Screen.SplashScreen;
         splashScreen.SetActive(true);
         Debug.Log(currentScreen);
-        yield return new WaitForSeconds(splashScreenTime);
+        yield return new WaitForSeconds(splashScreenTime /8);
+        AudioSource.PlayClipAtPoint(splashSFX, Camera.main.transform.position, SFXVolume);
+        yield return new WaitForSeconds(splashScreenTime * 7/8);
         splashScreen.SetActive(false);
         yield return new WaitForSeconds(clearScreenTime);
         ManageTitleScreen();
@@ -63,6 +70,7 @@ public class GameState : MonoBehaviour
 
     private void ManageTitleScreen()
     {
+        AudioSource.PlayClipAtPoint(titleSFX, Camera.main.transform.position, SFXVolume);
         currentScreen = Screen.TitleScreen;
         Debug.Log(currentScreen);
         titleScreen.SetActive(true);
@@ -71,6 +79,7 @@ public class GameState : MonoBehaviour
     private IEnumerator ManageTutorialScreen()
     {
         titleScreen.SetActive(false);
+        AudioSource.PlayClipAtPoint(clickSFX, Camera.main.transform.position, SFXVolume);
         yield return new WaitForSeconds(clearScreenTime);
         currentScreen = Screen.TutorialScreen;
         Debug.Log(currentScreen);
@@ -80,6 +89,7 @@ public class GameState : MonoBehaviour
     private IEnumerator ManageGameScreen()
     {
         tutorialScreen.SetActive(false);
+        AudioSource.PlayClipAtPoint(startSFX, Camera.main.transform.position, SFXVolume);
         yield return new WaitForSeconds(clearScreenTime);
         currentScreen = Screen.GameScreen;
         Debug.Log(currentScreen);
