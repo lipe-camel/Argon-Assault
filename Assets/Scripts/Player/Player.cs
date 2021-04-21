@@ -92,6 +92,8 @@ public class Player : MonoBehaviour
         gameObject.SetActive(true);
         GetCachedReferences();
         StartCustomStarts();
+
+        playerMovement.ResetPosition();
         isAlive = true;
         meshRenderer.enabled = true;
         boxCollider.enabled = true;

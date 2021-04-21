@@ -58,4 +58,9 @@ public class PlayerMovement : MonoBehaviour
 
         player.transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
+
+    internal void ResetPosition()
+    {
+        player.transform.localPosition = new Vector3(0, 0, 0);
+    }
 }
