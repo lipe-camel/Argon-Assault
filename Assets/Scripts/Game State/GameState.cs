@@ -6,13 +6,22 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
     //CONFIG PARAMS
+    [Header("Game")]
+    [SerializeField] internal GameObject[] gameElements;
+    [SerializeField] internal Player player;
+    [SerializeField] internal ObstacleSpawner obstacleSpawner;
+    [SerializeField] internal ScoreBoard scoreBoard;
+
+
     [Header("Screens")]
-    [SerializeField] GameObject[] gameElements;
-    [SerializeField] internal GameObject splashScreen, titleScreen, tutorialScreen, endScreen, creditsScreen;
+    [SerializeField] internal GameObject splashScreen;
+    [SerializeField] internal GameObject titleScreen, tutorialScreen, gameScreen, endScreen, creditsScreen;
+
     [Header("Time")]
     [SerializeField] float splashScreenTime = 2f;
     [SerializeField] float deathTime = 2f;
     [SerializeField] float clearScreenTime = 0.25f;
+
     [Header("Audio")]
     [SerializeField] internal AudioClip splashSFX;
     [SerializeField] internal AudioClip clickSFX;
@@ -27,20 +36,24 @@ public class GameState : MonoBehaviour
 
     //CACHED INTERNAL REFERENCES
     internal MenuInputs menuInputs;
+    internal StartGame startGame;
 
 
     //START
     private void Start()
     {
-        ManageInternalClasses();
+        ManageClasses();
         DeactivateAllScreens();
         StartCoroutine(ShowSplashScreen());
     }
 
-    private void ManageInternalClasses()
+    private void ManageClasses()
     {
         menuInputs = GetComponent<MenuInputs>();
         menuInputs.CustomStart();
+
+        startGame = GetComponent<StartGame>();
+        startGame.CustomStart();
     }
 
     private void DeactivateAllScreens()
@@ -48,25 +61,33 @@ public class GameState : MonoBehaviour
         splashScreen.SetActive(false);
         titleScreen.SetActive(false);
         tutorialScreen.SetActive(false);
+        gameScreen.SetActive(false);
         endScreen.SetActive(false);
         creditsScreen.SetActive(false);
+
         foreach (GameObject gameElement in gameElements)
         {
             gameElement.SetActive(false);
         }
+        obstacleSpawner.Spawn(false);
+        //player.playerHealth.Die();
     }
 
 
     //MANAGE SCREENS
     internal IEnumerator ShowScreen(State state, GameObject screen, AudioClip SFX)
     {
+        Debug.Log($"Method \"ShowScreen\" Called");
+
         AudioSource.PlayClipAtPoint(SFX, Camera.main.transform.position, SFXVolume);
 
+        Debug.Log($"previous screen: {currentScreen}");
         currentScreen.SetActive(false);
         yield return new WaitForSeconds(clearScreenTime);
         currentState = state;
         currentScreen = screen;
         currentScreen.SetActive(true);
+        Debug.Log($"current screen: {currentScreen}");
     }
     internal IEnumerator ShowScreen(State state, GameObject screen)
     {
@@ -76,7 +97,6 @@ public class GameState : MonoBehaviour
         currentScreen = screen;
         currentScreen.SetActive(true);
     }
-
 
     internal IEnumerator ShowSplashScreen()
     {
@@ -92,19 +112,6 @@ public class GameState : MonoBehaviour
         StartCoroutine(ShowScreen(State.TitleScreen, titleScreen, titleSFX));
     }
 
-    internal IEnumerator StartGame()
-    {
-        AudioSource.PlayClipAtPoint(startSFX, Camera.main.transform.position, SFXVolume);
-        
-        currentScreen.SetActive(false);
-        yield return new WaitForSeconds(clearScreenTime);
-        currentState = State.GameScreen;
-        foreach (GameObject gameElement in gameElements)
-        {
-            gameElement.SetActive(true);
-        }
-    }
-
     public IEnumerator ShowEndScreen()
     {
         yield return new WaitForSeconds(deathTime);
@@ -116,5 +123,6 @@ public class GameState : MonoBehaviour
         currentState = State.EndScreen;
         currentScreen = endScreen;
         endScreen.SetActive(true);
+        scoreBoard.ShowFinalScore();
     }
 }

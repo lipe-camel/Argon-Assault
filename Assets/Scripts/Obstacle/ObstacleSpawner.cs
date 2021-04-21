@@ -10,11 +10,15 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] float maxSpawnDelay = 5f;
 
     //STATES
-    bool spawn = true;
+    //public bool spawn;
     int obstacleCount;
 
+    private void Start()
+    {
+        StartCoroutine(Spawn(true));
+    }
 
-    private IEnumerator Start()
+    public IEnumerator Spawn(bool spawn)
     {   
 
         while (spawn)

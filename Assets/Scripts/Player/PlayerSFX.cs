@@ -13,7 +13,7 @@ public class PlayerSFX : MonoBehaviour
     internal void CustomStart()
     {
         //laserSound = GetComponentInChildren<AudioSource>();
-        Debug.Log(laserSound.gameObject.name);
+        //Debug.Log(laserSound.gameObject.name);
     }
 
     internal void PlayLaserSFX()

@@ -6,7 +6,7 @@ public class ScoreBoard : MonoBehaviour
     int currentScore;
 
     //CACHED EXTERNAL REFERENCES
-    [SerializeField] ScoreDisplay scoreDisplay;
+    [SerializeField] ScoreDisplay scoreDisplay, finalScoreDisplay;
 
     private void Start()
     {
@@ -36,5 +36,11 @@ public class ScoreBoard : MonoBehaviour
         {
             scoreDisplay.UpdateScore(currentScore);
         }
+    }
+
+    public void ShowFinalScore()
+    {
+        Debug.Log($"my score is {currentScore}");
+        finalScoreDisplay.UpdateScore(currentScore);
     }
 }

@@ -54,13 +54,13 @@ public class PlayerVFX : MonoBehaviour
         }
     }
 
-    internal void DisableSecondaryParticles()
+    internal void ToggleSecondaryParticles(bool isActive)
     {
         if(secondaryParticles.Length == 0) { return; }
 
         foreach (ParticleSystem particle in secondaryParticles)
         {
-            Destroy(particle.gameObject);
+            particle.gameObject.SetActive(isActive);
         }
     }
 }

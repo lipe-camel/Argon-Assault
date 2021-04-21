@@ -26,7 +26,7 @@ internal class MenuInputs : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                StartCoroutine(gameState.StartGame());
+                gameState.startGame.StartNewGame();
             }
         }
 
@@ -34,7 +34,8 @@ internal class MenuInputs : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                StartCoroutine(gameState.StartGame());
+                gameState.startGame.StartNewGame();
+
             }
             if (Input.GetKeyDown(KeyCode.C))
             {
@@ -48,7 +49,7 @@ internal class MenuInputs : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                StartCoroutine(gameState.StartGame());
+                gameState.startGame.StartNewGame();
             }
         }
     }

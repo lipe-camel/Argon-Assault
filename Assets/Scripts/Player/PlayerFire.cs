@@ -28,11 +28,11 @@ public class PlayerFire : MonoBehaviour
         }
     }
 
-    internal void DisableLasers() //used when dead
+    internal void ToggleLasers(bool isActive) //used when dead
     {
         foreach (ParticleSystem laser in player.lasers)
         {
-            laser.gameObject.SetActive(false);
+            laser.gameObject.SetActive(isActive);
         }
     }
 

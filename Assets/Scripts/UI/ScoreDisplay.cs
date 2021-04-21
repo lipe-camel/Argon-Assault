@@ -13,6 +13,6 @@ public class ScoreDisplay : MonoBehaviour
 
     public void UpdateScore(int score)
     {
-        ScoreText.text = score.ToString();
+        GetComponent<Text>().text = score.ToString();
     }
 }
