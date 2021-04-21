@@ -7,5 +7,7 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PressStart
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: bc46dd7b9ecf83d4ca7f0de73920b44a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b7e74f759ba76ce4fb78dd02c5876629, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6a49e35c25c63bf408e7be253b4ae768, type: 2}
