@@ -17,13 +17,19 @@ public class PlayerHealth : MonoBehaviour
     {
         player = GetComponent<Player>();
         health = initialHealth;
-        player.healthDisplay.UpdateDisplay(health);
+        if (player.healthDisplay)
+        {
+            player.healthDisplay.UpdateDisplay(health);
+        }
     }
 
     internal void GainHealth()
     {
         health = 1f;
-        player.healthDisplay.UpdateDisplay(health);
+        if (player.healthDisplay)
+        {
+            player.healthDisplay.UpdateDisplay(health);
+        }
     }
 
     private void LoseHealth(float damage)

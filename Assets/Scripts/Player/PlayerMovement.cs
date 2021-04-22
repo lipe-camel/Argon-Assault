@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     float xValue;
     [SerializeField] [Tooltip("The vertical limit value that the player is allowed to move")]
     float yValue;
+    [SerializeField] Vector3 menuPos = new Vector3(0, -18, 0);
 
     [Header("Movement")]
     [SerializeField] [Tooltip("The speed of the player")]
@@ -62,5 +63,10 @@ public class PlayerMovement : MonoBehaviour
     internal void ResetPosition()
     {
         player.transform.localPosition = new Vector3(0, 0, 0);
+    }
+
+    internal void SetMenuPosition()
+    {
+        player.transform.localPosition = menuPos;
     }
 }

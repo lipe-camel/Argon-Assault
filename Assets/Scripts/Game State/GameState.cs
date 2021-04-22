@@ -65,7 +65,7 @@ public class GameState : MonoBehaviour
         creditsScreen.SetActive(false);
 
         obstacleSpawner.ToggleSpawn(false);
-        player.gameObject.SetActive(false);
+        player.playerMovement.SetMenuPosition();
     }
 
 
