@@ -42,7 +42,7 @@ public class Debugger : MonoBehaviour
             }
 
             //Adds A LOT of life to the current obstacles
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.J))
             {
                 obstacles = FindObjectsOfType<Obstacle>();
                 foreach (Obstacle obstacle in obstacles)

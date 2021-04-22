@@ -11,7 +11,7 @@ public class GameState : MonoBehaviour
 
     [Header("Screens")]
     [SerializeField] internal GameObject splashScreen;
-    [SerializeField] internal GameObject titleScreen, tutorialScreen, gameScreen, endScreen, creditsScreen;
+    [SerializeField] internal GameObject titleScreen, tutorialScreen, gameScreen, pauseScreen, endScreen, creditsScreen;
 
     [Header("Time")]
     [SerializeField] internal float clearScreenTime = 0.25f;
@@ -22,7 +22,7 @@ public class GameState : MonoBehaviour
     [SerializeField] internal AudioClip splashSFX, clickSFX, titleSFX, startSFX;
 
     //STATE
-    internal enum State { SplashScreen, TitleScreen, TutorialScreen, GameScreen, EndScreen, CreditsScreen};
+    internal enum State { SplashScreen, TitleScreen, TutorialScreen, GameScreen, PauseScreen, EndScreen, CreditsScreen};
     internal State currentState;
     internal GameObject currentScreen;
 
@@ -51,6 +51,7 @@ public class GameState : MonoBehaviour
         titleScreen.SetActive(false);
         tutorialScreen.SetActive(false);
         gameScreen.SetActive(false);
+        pauseScreen.SetActive(false);
         endScreen.SetActive(false);
         creditsScreen.SetActive(false);
     }
@@ -110,5 +111,31 @@ public class GameState : MonoBehaviour
         obstacleSpawner.ToggleSpawn(true);
         player.Spawn();
         player.playerFire.CanFire(true);
+    }
+
+    internal IEnumerator PauseGame()
+    {
+        Debug.Log("Game should pause now");
+        AudioSource.PlayClipAtPoint(clickSFX, Camera.main.transform.position, SFXVolume);
+        FindObjectOfType<Music>().GetComponent<AudioReverbFilter>().enabled = true;
+        yield return new WaitForSeconds(0.0001f);
+        Time.timeScale = 0f;
+        currentScreen = pauseScreen;
+        pauseScreen.SetActive(true);
+        player.playerFire.CanFire(false);
+        currentState = State.PauseScreen;
+    }
+
+    internal IEnumerator ResumeGame()
+    {
+        Debug.Log("Game should resume now");
+        Time.timeScale = 1f;
+        AudioSource.PlayClipAtPoint(clickSFX, Camera.main.transform.position, SFXVolume);
+        FindObjectOfType<Music>().GetComponent<AudioReverbFilter>().enabled = false;
+        yield return new WaitForSeconds(0.0001f);
+        currentScreen = gameScreen;
+        pauseScreen.SetActive(false);
+        player.playerFire.CanFire(true);
+        currentState = State.GameScreen;
     }
 }

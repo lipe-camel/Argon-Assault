@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4918079676224426963}
   - component: {fileID: 4918079676224426960}
   - component: {fileID: -1959131638151363503}
+  - component: {fileID: 84818226}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -140,3 +141,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c011f8afec2ea47ae893976da9186d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!164 &84818226
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4918079676224426961}
+  m_Enabled: 0
+  m_DryLevel: -4494
+  m_Room: 0
+  m_RoomHF: -1139
+  m_DecayTime: 3.2
+  m_DecayHFRatio: 0.32
+  m_ReflectionsLevel: -7703
+  m_ReverbLevel: 228
+  m_ReverbDelay: 0.04
+  m_Diffusion: 79.7
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0.143
+  m_ReverbPreset: 27

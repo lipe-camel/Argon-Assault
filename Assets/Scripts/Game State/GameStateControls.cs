@@ -12,6 +12,7 @@ internal class GameStateControls : MonoBehaviour
 
     private void Update()
     {
+        //MENU CONTROLS
         if (gameState.currentState == GameState.State.TitleScreen)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -47,6 +48,23 @@ internal class GameStateControls : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartCoroutine(gameState.StartGame());
+            }
+        }
+
+        //PAUSE CONTROLS
+        if (gameState.currentState == GameState.State.GameScreen)
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                StartCoroutine(gameState.PauseGame());
+            }
+        }
+
+        if (gameState.currentState == GameState.State.PauseScreen)
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                StartCoroutine(gameState.ResumeGame());
             }
         }
     }
