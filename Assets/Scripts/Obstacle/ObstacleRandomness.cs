@@ -94,7 +94,10 @@ internal class ObstacleRandomness : MonoBehaviour
 
     private void Rotate()
     {
-        obstacle.obstacleModel.transform.Rotate(randomRotationFactor, Space.Self);
+        if (obstacle.gameState.currentState != GameState.State.PauseScreen)
+        {
+            obstacle.obstacleModel.transform.Rotate(randomRotationFactor, Space.Self);
+        }
     }
 
 

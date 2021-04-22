@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     //STATES
     internal bool isAlive = true;
+    internal bool canMove;
     internal bool canFire;
 
     //CACHED CLASSES REFERENCES
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
     internal Rigidbody rigidBody;
     internal BoxCollider boxCollider;
     internal MeshRenderer meshRenderer;
+    internal AudioSource audioSource;
 
     //CACHED EXTERNAL REFERENCES
     internal HealthDisplay healthDisplay;
@@ -57,6 +59,7 @@ public class Player : MonoBehaviour
         rigidBody = GetComponentInChildren<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         meshRenderer = GetComponent<MeshRenderer>();
+        audioSource = GetComponent<AudioSource>();
 
         healthDisplay = FindObjectOfType<HealthDisplay>();
         sceneLoader = FindObjectOfType<SceneLoader>();

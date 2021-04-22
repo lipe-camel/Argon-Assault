@@ -30,6 +30,7 @@ public class Obstacle : MonoBehaviour
 
     //CACHED EXRTERNAL REFERENCES
     internal ScoreBoard scoreBoard;
+    internal GameState gameState;
 
     private void Start()
     {
@@ -52,6 +53,7 @@ public class Obstacle : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
 
         scoreBoard = FindObjectOfType<ScoreBoard>();
+        gameState = FindObjectOfType<GameState>();
     }
 
     private void StartCustomStarts()

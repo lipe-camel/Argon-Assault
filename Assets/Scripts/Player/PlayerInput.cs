@@ -51,11 +51,10 @@ public class PlayerInput : MonoBehaviour
 
     private void ManageMovementInput()
     {
-        //float xThrow = movement.ReadValue<Vector2>().x;
-        //float yThrow = movement.ReadValue<Vector2>().y;
+        if(!player.canMove) { return; }
+
         float xThrow = Input.GetAxis(HORIZONTAL_AXIS);
         float yThrow = Input.GetAxis(VERTICAL_AXIS);
-        //Debug.Log($"{xThrow}, {yThrow}");
         player.playerMovement.ProcessPlayerMovement(xThrow, yThrow);
     }
 
@@ -63,7 +62,6 @@ public class PlayerInput : MonoBehaviour
     {
         if(!player.canFire) { return; }
 
-        //if (fire.ReadValue<float>() > 0.5f)
         if(Input.GetButtonDown(FIRE_BUTTON))
         {
             player.playerSFX.PlayLaserSFX();

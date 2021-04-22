@@ -82,6 +82,7 @@ public class GameState : MonoBehaviour
         splashScreen.SetActive(true);
         currentScreen = splashScreen;
         currentState = State.SplashScreen;
+        player.playerMovement.CanMove(true);
 
         yield return new WaitForSeconds(splashScreenTime /8);
         AudioSource.PlayClipAtPoint(splashSFX, Camera.main.transform.position, SFXVolume);
@@ -111,31 +112,44 @@ public class GameState : MonoBehaviour
         obstacleSpawner.ToggleSpawn(true);
         player.Spawn();
         player.playerFire.CanFire(true);
+        player.playerMovement.CanMove(true);
     }
 
     internal IEnumerator PauseGame()
     {
         Debug.Log("Game should pause now");
+
         AudioSource.PlayClipAtPoint(clickSFX, Camera.main.transform.position, SFXVolume);
         FindObjectOfType<Music>().GetComponent<AudioReverbFilter>().enabled = true;
+        player.audioSource.enabled = false;
+
+        player.playerFire.CanFire(false);
+        player.playerMovement.CanMove(false);
+
         yield return new WaitForSeconds(0.0001f);
         Time.timeScale = 0f;
+
         currentScreen = pauseScreen;
         pauseScreen.SetActive(true);
-        player.playerFire.CanFire(false);
         currentState = State.PauseScreen;
     }
 
     internal IEnumerator ResumeGame()
     {
         Debug.Log("Game should resume now");
-        Time.timeScale = 1f;
+
         AudioSource.PlayClipAtPoint(clickSFX, Camera.main.transform.position, SFXVolume);
         FindObjectOfType<Music>().GetComponent<AudioReverbFilter>().enabled = false;
+        player.audioSource.enabled = true;
+
+        Time.timeScale = 1f;
         yield return new WaitForSeconds(0.0001f);
+
+        player.playerFire.CanFire(true);
+        player.playerMovement.CanMove(true);
+
         currentScreen = gameScreen;
         pauseScreen.SetActive(false);
-        player.playerFire.CanFire(true);
         currentState = State.GameScreen;
     }
 }
