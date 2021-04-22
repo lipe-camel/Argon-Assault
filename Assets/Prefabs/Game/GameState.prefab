@@ -51,6 +51,7 @@ MonoBehaviour:
   titleScreen: {fileID: 0}
   tutorialScreen: {fileID: 0}
   gameScreen: {fileID: 0}
+  pauseScreen: {fileID: 0}
   endScreen: {fileID: 0}
   creditsScreen: {fileID: 0}
   clearScreenTime: 0.25

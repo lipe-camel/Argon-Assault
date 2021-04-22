@@ -405,6 +405,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 84818226, guid: 1ba061483a5149f4b9e5bf2f99c93c50, type: 3}
+      propertyPath: m_Room
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84818226, guid: 1ba061483a5149f4b9e5bf2f99c93c50, type: 3}
+      propertyPath: m_RoomHF
+      value: -749
+      objectReference: {fileID: 0}
+    - target: {fileID: 84818226, guid: 1ba061483a5149f4b9e5bf2f99c93c50, type: 3}
+      propertyPath: m_RoomLF
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84818226, guid: 1ba061483a5149f4b9e5bf2f99c93c50, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84818226, guid: 1ba061483a5149f4b9e5bf2f99c93c50, type: 3}
+      propertyPath: m_DryLevel
+      value: -1873
+      objectReference: {fileID: 0}
+    - target: {fileID: 84818226, guid: 1ba061483a5149f4b9e5bf2f99c93c50, type: 3}
+      propertyPath: m_DecayTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 84818226, guid: 1ba061483a5149f4b9e5bf2f99c93c50, type: 3}
+      propertyPath: m_Diffusion
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 84818226, guid: 1ba061483a5149f4b9e5bf2f99c93c50, type: 3}
+      propertyPath: m_ReverbLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84818226, guid: 1ba061483a5149f4b9e5bf2f99c93c50, type: 3}
+      propertyPath: m_DecayHFRatio
+      value: 0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 84818226, guid: 1ba061483a5149f4b9e5bf2f99c93c50, type: 3}
+      propertyPath: m_ReflectionsDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 84818226, guid: 1ba061483a5149f4b9e5bf2f99c93c50, type: 3}
+      propertyPath: m_ReflectionsLevel
+      value: -10000
+      objectReference: {fileID: 0}
     - target: {fileID: 4918079676224426961, guid: 1ba061483a5149f4b9e5bf2f99c93c50,
         type: 3}
       propertyPath: m_Name
@@ -606,6 +650,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 544529523, guid: a026ddf85e21f5f408397bbd591ecc1c, type: 3}
+      propertyPath: movementSpeed
+      value: 107
+      objectReference: {fileID: 0}
     - target: {fileID: 7827389219498688500, guid: a026ddf85e21f5f408397bbd591ecc1c,
         type: 3}
       propertyPath: m_RootOrder
@@ -2070,26 +2118,6 @@ PrefabInstance:
     - target: {fileID: 97625607, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
       propertyPath: m_AmplitudeGain
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108388492, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
-      propertyPath: damageShaker
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108388492, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
-      propertyPath: damageShakeTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108388493, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
-      propertyPath: m_Size.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108388493, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
-      propertyPath: m_Size.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108388493, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
-      propertyPath: m_Center.x
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6517336495180417289, guid: 19ef3e7cdd875704db49fdc775778403,
         type: 3}
