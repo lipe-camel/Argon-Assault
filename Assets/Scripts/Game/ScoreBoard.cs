@@ -1,21 +1,25 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class ScoreBoard : MonoBehaviour
 {
+    //CONFIG PARAMS
+    [SerializeField] ScoreDisplay scoreDisplay, finalScoreDisplay;
+    [SerializeField] int initialMilestone = 1000;
+    [SerializeField] int milestoneFactor = 2;
+
     //STATS
     int currentScore;
+    int currentScoreMilestone;
 
     //CACHED COMPONENT REFERENCES
     AudioSource milestoneSFX;
-
-    //CACHED EXTERNAL REFERENCES
-    [SerializeField] ScoreDisplay scoreDisplay, finalScoreDisplay;
+        
 
     private void Start()
     {
         scoreDisplay.CustomStart();
         milestoneSFX = GetComponent<AudioSource>();
+        currentScoreMilestone = initialMilestone;
         ResetScore();
     }
 
@@ -26,11 +30,17 @@ public class ScoreBoard : MonoBehaviour
         if (scoreDisplay)
         {
             scoreDisplay.UpdateScore(currentScore);
-            if(currentScore >= 1000)
-            {
-                milestoneSFX.Play();
-                StartCoroutine(scoreDisplay.TwinkleScore());
-            }
+            CheckIfMilestone();
+        }
+    }
+
+    private void CheckIfMilestone()
+    {
+        if (currentScore >= currentScoreMilestone)
+        {
+            milestoneSFX.Play();
+            StartCoroutine(scoreDisplay.TwinkleScore());
+            currentScoreMilestone *= milestoneFactor;
         }
     }
 

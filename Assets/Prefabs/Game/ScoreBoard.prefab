@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 0}
+  finalScoreDisplay: {fileID: 0}
+  initialMilestone: 1000
+  milestoneFactor: 2

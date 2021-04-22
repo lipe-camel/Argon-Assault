@@ -167,6 +167,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f58724bdc4a68408a39b7a9c911ec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  c1:
+    serializedVersion: 2
+    rgba: 4283826175
+  c2:
+    serializedVersion: 2
+    rgba: 4283782655
+  c3:
+    serializedVersion: 2
+    rgba: 4294945450
+  c4:
+    serializedVersion: 2
+    rgba: 4278255530
+  frameRate: 12
+  numberOfFlashes: 4
 --- !u!1 &535189958182157698
 GameObject:
   m_ObjectHideFlags: 0
