@@ -90,9 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777bcabe875872043afc485b28d5cd2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 120
+  gameSpeed: 100
   minSpeed: 6
-  speedDecreased: 0.5
+  speedDecreased: 5
 --- !u!114 &3187635980014072779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ef2d6f5ae6f25458bfae4c94b3b151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationFactor: 0.2
+  rotationFactor: 0.4
   initialRotation: 180
   minSize: 5
   maxSize: 15
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3d1abeb1f1dd44e82bf8a1767ef90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBaseValue: 5
+  healthBaseValue: 8
 --- !u!114 &6364657800450213600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f28d884d2540546bc3cb69019a89d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageMultiplier: 2
+  damageMultiplier: 1.333
 --- !u!114 &4669630827782392125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,15 +233,15 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: b5d9e7c8d450a274f835f2e2c7f65d81, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: -0.94
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 5
-  MinDistance: 38.34
-  MaxDistance: 500
+  MinDistance: 9.37
+  MaxDistance: 200
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

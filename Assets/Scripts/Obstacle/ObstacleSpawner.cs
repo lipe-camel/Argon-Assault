@@ -4,10 +4,14 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     //CONFIG PARAMS
+    [Header("Spawn")]
     [SerializeField] GameObject obstacle;
     [SerializeField] float xSpawnLimit = 19f, ySpawnLimit = 12f;
     [SerializeField] float minSpawnDelay = 1f;
     [SerializeField] float maxSpawnDelay = 5f;
+    [Header("Despawn")]
+    [SerializeField] AudioClip despawnSFX;
+    [SerializeField] float SFXVolume = 0.2f;
 
     //STATES
     bool spawn;
@@ -52,7 +56,9 @@ public class ObstacleSpawner : MonoBehaviour
         obstacles = FindObjectsOfType<Obstacle>();
         foreach (Obstacle obstacle in obstacles)
         {
-            obstacle.obstacleHealth.Die();
+            obstacle.obstacleExplosion.Explode(transform.position);
         }
+        if (obstacles.Length ==0) { return; }
+        AudioSource.PlayClipAtPoint(despawnSFX, Camera.main.transform.position, SFXVolume);
     }
 }
