@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 4035400ffd83133478dd32afa826062d
+guid: e2ac5196624329d4486a6076e8337de9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2742149107050696786
-    second: presscredits_0
+      213: -2521409195606705084
+    second: Tutorial_0
   - first:
-      213: 5516442443840927286
-    second: presscredits_1
+      213: 6875079111340007291
+    second: Tutorial_1
   - first:
-      213: -15785070162402470
-    second: presscredits_2
+      213: 8746059415684039367
+    second: Tutorial_2
   - first:
-      213: -3335290982269570351
-    second: presscredits_3
+      213: 4165041436626036476
+    second: Tutorial_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 118
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,13 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: presscredits_0
+      name: Tutorial_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 11
-        width: 118
-        height: 11
+        y: 340
+        width: 575
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,20 +141,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25059e695121e0620800000000000000
-      internalID: 2742149107050696786
+      spriteID: 44c757212b7220dd0800000000000000
+      internalID: -2521409195606705084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: presscredits_1
+      name: Tutorial_1
       rect:
         serializedVersion: 2
-        x: 118
-        y: 11
-        width: 118
-        height: 11
+        x: 575
+        y: 340
+        width: 575
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 636b601ec275e8c40800000000000000
-      internalID: 5516442443840927286
+      spriteID: b7f112aa600396f50800000000000000
+      internalID: 6875079111340007291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: presscredits_2
+      name: Tutorial_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 118
-        height: 11
+        width: 575
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a532734ff8be7cff0800000000000000
-      internalID: -15785070162402470
+      spriteID: 7c2ce4033be306970800000000000000
+      internalID: 8746059415684039367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: presscredits_3
+      name: Tutorial_3
       rect:
         serializedVersion: 2
-        x: 118
+        x: 575
         y: 0
-        width: 118
-        height: 11
+        width: 575
+        height: 340
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d23243d58aa6b1d0800000000000000
-      internalID: -3335290982269570351
+      spriteID: cf6a0e88e133dc930800000000000000
+      internalID: 4165041436626036476
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 01555edca87d9db478120cb73d4ef4fa
+    spriteID: 0e508c6c44e4bbe4da617e41fd20d431
     internalID: 0
     vertices: []
     indices: 

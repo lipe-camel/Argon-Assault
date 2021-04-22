@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 9a51f53311425be4fb9eca007d18ed35
+guid: 0a354a930dfa294499c19f3316d91f62
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7352339073622421304
-    second: Title_0
+      213: 857365233319269565
+    second: finalscreen_0
   - first:
-      213: 578584420991164872
-    second: Title_1
+      213: -282677230906365078
+    second: finalscreen_1
   - first:
-      213: -2586058674264470982
-    second: Title_2
+      213: -1127534159855510923
+    second: finalscreen_2
   - first:
-      213: -7455755055849233376
-    second: Title_3
+      213: -4355648235462340365
+    second: finalscreen_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 150
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,85 +127,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Title_0
+      name: finalscreen_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 151
-        width: 150
-        height: 149
+        y: 255
+        width: 600
+        height: 255
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c0d280219e37f990800000000000000
-      internalID: -7352339073622421304
+      spriteID: db4d3ce1329f5eb00800000000000000
+      internalID: 857365233319269565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Title_1
+      name: finalscreen_1
       rect:
         serializedVersion: 2
-        x: 151
-        y: 150
-        width: 149
-        height: 150
+        x: 600
+        y: 255
+        width: 600
+        height: 255
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c1e0c5277b870800800000000000000
-      internalID: 578584420991164872
+      spriteID: a6b2cb16e8ab31cf0800000000000000
+      internalID: -282677230906365078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Title_2
+      name: finalscreen_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 149
-        height: 150
+        width: 600
+        height: 255
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3a062856597c1cd0800000000000000
-      internalID: -2586058674264470982
+      spriteID: 57a91b1d7a13a50f0800000000000000
+      internalID: -1127534159855510923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Title_3
+      name: finalscreen_3
       rect:
         serializedVersion: 2
-        x: 150
+        x: 600
         y: 0
-        width: 150
-        height: 149
+        width: 600
+        height: 255
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 024a8cb6746d78890800000000000000
-      internalID: -7455755055849233376
+      spriteID: 3f0d5bec101ad83c0800000000000000
+      internalID: -4355648235462340365
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 66f07d0d769a526479d4fd0ef9146c37
+    spriteID: 0b090efaea257494f89d734892ab6e34
     internalID: 0
     vertices: []
     indices: 

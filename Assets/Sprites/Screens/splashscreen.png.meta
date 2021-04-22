@@ -14,6 +14,18 @@ TextureImporter:
   - first:
       213: 855730765441063254
     second: spashscreen_3
+  - first:
+      213: 7284042766073949338
+    second: splashscreen_0
+  - first:
+      213: -487542007057738362
+    second: splashscreen_1
+  - first:
+      213: 6808996574024463031
+    second: splashscreen_2
+  - first:
+      213: -761939336395716403
+    second: splashscreen_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +70,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 309
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spashscreen_0
+      name: splashscreen_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 186
-        width: 309
-        height: 186
+        y: 930
+        width: 1545
+        height: 930
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21f44d080de427000800000000000000
-      internalID: 32174804766576402
+      spriteID: a9c6790ad4e161560800000000000000
+      internalID: 7284042766073949338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spashscreen_1
+      name: splashscreen_1
       rect:
         serializedVersion: 2
-        x: 309
-        y: 186
-        width: 309
-        height: 186
+        x: 1545
+        y: 930
+        width: 1545
+        height: 930
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b77f39c675f68d70800000000000000
-      internalID: 9045186792151545783
+      spriteID: 6851e30b027eb39f0800000000000000
+      internalID: -487542007057738362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spashscreen_2
+      name: splashscreen_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 309
-        height: 186
+        width: 1545
+        height: 930
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 874b58aa0594c4090800000000000000
-      internalID: -8048977823210818440
+      spriteID: 7b27497fe4a6e7e50800000000000000
+      internalID: 6808996574024463031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spashscreen_3
+      name: splashscreen_3
       rect:
         serializedVersion: 2
-        x: 309
+        x: 1545
         y: 0
-        width: 309
-        height: 186
+        width: 1545
+        height: 930
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 659dc79e89a20eb00800000000000000
-      internalID: 855730765441063254
+      spriteID: dc88cb1e53c0d65f0800000000000000
+      internalID: -761939336395716403
       vertices: []
       indices: 
       edges: []

@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: b0a38560bece5d34883175379867d5be
+guid: 4035400ffd83133478dd32afa826062d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1640297930971909881
-    second: pressSpaceagain_0
+      213: 2742149107050696786
+    second: presscredits_0
   - first:
-      213: -5211600601372239861
-    second: pressSpaceagain_1
+      213: 5516442443840927286
+    second: presscredits_1
   - first:
-      213: -7409733107040990593
-    second: pressSpaceagain_2
+      213: -15785070162402470
+    second: presscredits_2
   - first:
-      213: -2400807048774581418
-    second: pressSpaceagain_3
+      213: -3335290982269570351
+    second: presscredits_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -58,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 135
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,13 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pressSpaceagain_0
+      name: presscredits_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 12
-        width: 135
-        height: 12
+        y: 55
+        width: 590
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,20 +141,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fe836d074283c610800000000000000
-      internalID: 1640297930971909881
+      spriteID: 25059e695121e0620800000000000000
+      internalID: 2742149107050696786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pressSpaceagain_1
+      name: presscredits_1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 12
-        width: 135
-        height: 12
+        x: 590
+        y: 55
+        width: 590
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b08def38ddcaca7b0800000000000000
-      internalID: -5211600601372239861
+      spriteID: 636b601ec275e8c40800000000000000
+      internalID: 5516442443840927286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pressSpaceagain_2
+      name: presscredits_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 135
-        height: 12
+        width: 590
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7ace526ff65b2990800000000000000
-      internalID: -7409733107040990593
+      spriteID: a532734ff8be7cff0800000000000000
+      internalID: -15785070162402470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pressSpaceagain_3
+      name: presscredits_3
       rect:
         serializedVersion: 2
-        x: 135
+        x: 590
         y: 0
-        width: 135
-        height: 12
+        width: 590
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 653898b85be9eaed0800000000000000
-      internalID: -2400807048774581418
+      spriteID: 1d23243d58aa6b1d0800000000000000
+      internalID: -3335290982269570351
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 259a7c2b84167694b994a0cf119e97e3
+    spriteID: 01555edca87d9db478120cb73d4ef4fa
     internalID: 0
     vertices: []
     indices: 
