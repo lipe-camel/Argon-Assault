@@ -2069,7 +2069,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 97625607, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
       propertyPath: m_AmplitudeGain
-      value: 1.959252
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2108388492, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
       propertyPath: damageShaker
@@ -2078,6 +2078,18 @@ PrefabInstance:
     - target: {fileID: 2108388492, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
       propertyPath: damageShakeTime
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108388493, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
+      propertyPath: m_Size.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108388493, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
+      propertyPath: m_Size.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108388493, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
+      propertyPath: m_Center.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6517336495180417289, guid: 19ef3e7cdd875704db49fdc775778403,
         type: 3}
