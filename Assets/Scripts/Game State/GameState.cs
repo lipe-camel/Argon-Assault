@@ -107,6 +107,7 @@ public class GameState : MonoBehaviour
     {
         StartCoroutine(ShowScreen(State.GameScreen, gameScreen, startSFX));
         scoreBoard.ResetScore();
+        scoreBoard.ResetMilestone();
         obstacleSpawner.DespawnAllObstacles();
         yield return new WaitForSeconds(clearScreenTime);
         obstacleSpawner.ToggleSpawn(true);

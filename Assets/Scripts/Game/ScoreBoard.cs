@@ -9,7 +9,7 @@ public class ScoreBoard : MonoBehaviour
 
     //STATS
     int currentScore;
-    int currentScoreMilestone;
+    int currentMilestone;
 
     //CACHED COMPONENT REFERENCES
     AudioSource milestoneSFX;
@@ -19,7 +19,7 @@ public class ScoreBoard : MonoBehaviour
     {
         scoreDisplay.CustomStart();
         milestoneSFX = GetComponent<AudioSource>();
-        currentScoreMilestone = initialMilestone;
+        currentMilestone = initialMilestone;
         ResetScore();
     }
 
@@ -36,11 +36,11 @@ public class ScoreBoard : MonoBehaviour
 
     private void CheckIfMilestone()
     {
-        if (currentScore >= currentScoreMilestone)
+        if (currentScore >= currentMilestone)
         {
             milestoneSFX.Play();
             StartCoroutine(scoreDisplay.TwinkleScore());
-            currentScoreMilestone *= milestoneFactor;
+            currentMilestone *= milestoneFactor;
         }
     }
 
@@ -56,5 +56,10 @@ public class ScoreBoard : MonoBehaviour
         {
             scoreDisplay.UpdateScore(currentScore);
         }
+    }
+
+    public void ResetMilestone()
+    {
+        currentMilestone = initialMilestone;
     }
 }

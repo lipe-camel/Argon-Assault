@@ -1557,31 +1557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2645450817060159984, guid: f01d8e29e50ac744994cbc972d93918f,
-        type: 3}
-      propertyPath: despawnSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: cba9cc830bddd3c4ab2087287ab98489, type: 3}
-    - target: {fileID: 2645450817060159984, guid: f01d8e29e50ac744994cbc972d93918f,
-        type: 3}
-      propertyPath: xSpawnLimit
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2645450817060159984, guid: f01d8e29e50ac744994cbc972d93918f,
-        type: 3}
-      propertyPath: ySpawnLimit
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2645450817060159984, guid: f01d8e29e50ac744994cbc972d93918f,
-        type: 3}
-      propertyPath: maxSpawnDelay
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2645450817060159984, guid: f01d8e29e50ac744994cbc972d93918f,
-        type: 3}
-      propertyPath: minSpawnDelay
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 2645450817060159985, guid: f01d8e29e50ac744994cbc972d93918f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1641,11 +1616,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ObstacleSpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 2645450817060159986, guid: f01d8e29e50ac744994cbc972d93918f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01d8e29e50ac744994cbc972d93918f, type: 3}
@@ -2099,7 +2069,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 97625607, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
       propertyPath: m_AmplitudeGain
-      value: 0.5
+      value: 1.959252
       objectReference: {fileID: 0}
     - target: {fileID: 2108388492, guid: 19ef3e7cdd875704db49fdc775778403, type: 3}
       propertyPath: damageShaker
