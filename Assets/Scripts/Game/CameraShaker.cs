@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Cinemachine;
 
@@ -5,10 +6,13 @@ public class CameraShaker : MonoBehaviour
 {
     //CONFIG PARAMS
     [SerializeField] float defaultCameraShake = 0.5f;
-    [SerializeField] float shakerMultiplier = 1f;
+    [SerializeField] float ObstacleShakerMultiplier = 0.2f;
+    [SerializeField] float damageShaker = 10f;
+    [SerializeField] float damageShakeTime = 0.5f;
 
     //STATES
     float currentCameraShake;
+    bool isDamageShaking = false;
 
     //CACHED EXTERNAL REFERENCES
     CinemachineBasicMultiChannelPerlin cameraNoise;
@@ -20,30 +24,41 @@ public class CameraShaker : MonoBehaviour
         cameraNoise.m_AmplitudeGain = defaultCameraShake;
     }
 
+    //OBSTACLE SHAKER
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInParent<Obstacle>())
+        if (other.GetComponentInParent<Obstacle>() && !isDamageShaking)
         {
             //this gets a value that is multiplied by the obstacles size
-            float intenseCameraShake = other.GetComponentInParent<Obstacle>().obstacleModel.transform.localScale.x * shakerMultiplier;
+            float intenseCameraShake = other.GetComponentInParent<Obstacle>().obstacleModel.transform.localScale.x * ObstacleShakerMultiplier;
             if (intenseCameraShake <= defaultCameraShake) { intenseCameraShake = defaultCameraShake; }
 
-            SetCameraShake(other, intenseCameraShake);
+            SetCameraShake(intenseCameraShake);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponentInParent<Obstacle>())
+        if (other.GetComponentInParent<Obstacle>() && !isDamageShaking)
         {
-            SetCameraShake(other, defaultCameraShake);
+            SetCameraShake(defaultCameraShake);
         }
     }
 
-    private void SetCameraShake(Collider other, float cameraShake)
+    private void SetCameraShake(float cameraShake)
     {
-        //Debug.Log(other.gameObject.transform.parent.parent.name);
         currentCameraShake = cameraShake;
         cameraNoise.m_AmplitudeGain = currentCameraShake;
+    }
+
+    //DAMAGE SHAKER
+    public IEnumerator DamageShake()
+    {
+        isDamageShaking = true;
+        float previousShake = currentCameraShake;
+        SetCameraShake(damageShaker);
+        yield return new WaitForSeconds(damageShakeTime);
+        isDamageShaking = false;
+        SetCameraShake(previousShake);
     }
 }

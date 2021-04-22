@@ -44,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
     internal void ManageDamage(float damage)
     {
         LoseHealth(damage);
+        StartCoroutine(player.cameraShaker.DamageShake());
 
         if (health > 0.001f)
         {

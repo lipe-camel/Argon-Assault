@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     internal HealthDisplay healthDisplay;
     internal SceneLoader sceneLoader;
     internal GameState gameState;
+    internal CameraShaker cameraShaker;
 
     void Start()
     {
@@ -64,6 +65,7 @@ public class Player : MonoBehaviour
         healthDisplay = FindObjectOfType<HealthDisplay>();
         sceneLoader = FindObjectOfType<SceneLoader>();
         gameState = FindObjectOfType<GameState>();
+        cameraShaker = FindObjectOfType<CameraShaker>();
     }
 
     internal void StartCustomStarts()
