@@ -27,6 +27,8 @@ public class Obstacle : MonoBehaviour
     //CACHED COMPONENT REFERENCES
     internal GameObject obstacleModel;
     internal Rigidbody rigidBody;
+    internal BoxCollider boxCollider;
+    internal MeshRenderer meshRenderer;
 
     //CACHED EXRTERNAL REFERENCES
     internal ScoreBoard scoreBoard;
@@ -54,6 +56,12 @@ public class Obstacle : MonoBehaviour
 
         scoreBoard = FindObjectOfType<ScoreBoard>();
         gameState = FindObjectOfType<GameState>();
+    }
+
+    internal void GetModelComponentReferences()
+    {
+        boxCollider = obstacleModel.GetComponentInChildren<BoxCollider>();
+        meshRenderer = obstacleModel.GetComponentInChildren<MeshRenderer>();
     }
 
     private void StartCustomStarts()

@@ -71,8 +71,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleOptions:
-  - {fileID: 1056666096333670, guid: b967b7faad8300942b63371cca467dc8, type: 3}
-  - {fileID: 1822345149752838, guid: ab631d8692cb46748aede5b6dcbf079f, type: 3}
+  - {fileID: 5999686068553341383, guid: 2cc48eb6d5751c7428e7f374b4db36ed, type: 3}
+  - {fileID: 7324643640498627180, guid: 0de8363c553a7b74aa65ca352d30c9db, type: 3}
+  - {fileID: 3715935891476046250, guid: 41246843e418af44395c65920e68bbf7, type: 3}
+  - {fileID: 1058830006697331223, guid: e3a7c11238d472048bebec5a03e7a032, type: 3}
+  - {fileID: 1988624006513338278, guid: faafa1ac228ce094db8b620284fbd0e0, type: 3}
   defaultObstacle: {fileID: 5549877562829624422, guid: b56e607c1d3b2f3409ffce9fbd91e42d,
     type: 3}
 --- !u!114 &9129252408154515537
@@ -87,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777bcabe875872043afc485b28d5cd2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 60
+  gameSpeed: 120
   minSpeed: 6
   speedDecreased: 0.5
 --- !u!114 &3187635980014072779
@@ -104,8 +107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationFactor: 0.2
   initialRotation: 180
-  minSize: 2
-  maxSize: 10
+  minSize: 5
+  maxSize: 15
 --- !u!114 &5660174351519199633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3d1abeb1f1dd44e82bf8a1767ef90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBaseValue: 20
+  healthBaseValue: 5
 --- !u!114 &6364657800450213600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f28d884d2540546bc3cb69019a89d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageMultiplier: 3
+  damageMultiplier: 2
 --- !u!114 &4669630827782392125
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -43,10 +43,8 @@ internal class ObstacleExplosion : MonoBehaviour
     private void DisableComponents()
     {
         //Disable the BoxCollider and MeshRenderer
-        BoxCollider boxCollider = obstacle.obstacleModel.GetComponentInChildren<BoxCollider>();
-        MeshRenderer meshRenderer = obstacle.obstacleModel.GetComponent<MeshRenderer>();
-        boxCollider.enabled = false;
-        meshRenderer.enabled = false;
+        obstacle.boxCollider.enabled = false;
+        obstacle.meshRenderer.enabled = false;
     }
 
     private void StopParticleEmission()

@@ -49,6 +49,7 @@ internal class ObstacleRandomness : MonoBehaviour
         {
             InstantiateModel(obstacle.defaultObstacle);
         }
+        obstacle.GetModelComponentReferences();
     }
 
     private void InstantiateModel(GameObject obstacleModel)
