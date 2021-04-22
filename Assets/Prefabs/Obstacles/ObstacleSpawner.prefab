@@ -45,7 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 3187635980014072777, guid: f995df85df2c7c049bd7c01c6bba4fff,
     type: 3}
-  xSpawnLimit: 30
-  ySpawnLimit: 18
-  minSpawnDelay: 0.5
-  maxSpawnDelay: 3
+  xSpawnLimit: 52
+  ySpawnLimit: 52
+  minSpawnDelay: 0.05
+  maxSpawnDelay: 0.3
+  despawnSFX: {fileID: 8300000, guid: cba9cc830bddd3c4ab2087287ab98489, type: 3}
+  SFXVolume: 0.2

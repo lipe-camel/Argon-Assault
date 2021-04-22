@@ -85,6 +85,7 @@ public class Player : MonoBehaviour
     {
         playerSFX.PlayDeathSFX();
         playerVFX.PlayDeathVFX();
+        audioSource.Stop();
         isAlive = false;
         meshRenderer.enabled = false;
         boxCollider.enabled = false;
@@ -103,6 +104,7 @@ public class Player : MonoBehaviour
         StartCustomStarts();
 
         playerMovement.ResetPosition();
+        audioSource.Play();
         isAlive = true;
         meshRenderer.enabled = true;
         boxCollider.enabled = true;
