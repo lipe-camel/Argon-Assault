@@ -61,6 +61,8 @@ public class PlayerInput : MonoBehaviour
 
     private void ManageFireInput()
     {
+        if(!player.canFire) { return; }
+
         //if (fire.ReadValue<float>() > 0.5f)
         if(Input.GetButtonDown(FIRE_BUTTON))
         {

@@ -40,4 +40,9 @@ public class PlayerFire : MonoBehaviour
     {
         return damage;
     }
+
+    internal void CanFire(bool boolean)
+    {
+        player.canFire = boolean;
+    }
 }

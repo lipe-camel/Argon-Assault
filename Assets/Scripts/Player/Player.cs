@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     //STATES
     internal bool isAlive = true;
+    internal bool canFire;
 
     //CACHED CLASSES REFERENCES
     internal PlayerInput playerInput;
@@ -91,6 +92,7 @@ public class Player : MonoBehaviour
     {
         if (isAlive) { return; }
 
+        //this power starts the player prefab
         gameObject.SetActive(true);
         GetCachedReferences();
         StartCustomStarts();

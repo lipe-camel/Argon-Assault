@@ -66,6 +66,7 @@ public class GameState : MonoBehaviour
 
         obstacleSpawner.ToggleSpawn(false);
         player.playerMovement.SetMenuPosition();
+        player.playerFire.CanFire(false);
     }
 
 

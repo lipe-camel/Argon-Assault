@@ -21,5 +21,6 @@ internal class StartGame : MonoBehaviour
         gameState.obstacleSpawner.ToggleSpawn(true);
         yield return new WaitForSeconds(gameState.clearScreenTime);
         gameState.player.Spawn();
+        gameState.player.playerFire.CanFire(true);
     }
 }
