@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6473387382223587293}
   - component: {fileID: 6473387382223587292}
   - component: {fileID: 6473387382223587294}
-  - component: {fileID: 7117830785220462194}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -45,9 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc24e3bdedbcd348bb68e08ff41c2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameElements:
-  - {fileID: 0}
-  - {fileID: 0}
   player: {fileID: 0}
   obstacleSpawner: {fileID: 0}
   scoreBoard: {fileID: 0}
@@ -57,14 +53,14 @@ MonoBehaviour:
   gameScreen: {fileID: 0}
   endScreen: {fileID: 0}
   creditsScreen: {fileID: 0}
+  clearScreenTime: 0.25
   splashScreenTime: 4
   deathTime: 2
-  clearScreenTime: 0.25
+  SFXVolume: 0.4
   splashSFX: {fileID: 8300000, guid: d84962ed172f9f64dbd0fedab10dcbd8, type: 3}
   clickSFX: {fileID: 8300000, guid: a5787aedf9338894c9a5c9565810972a, type: 3}
   titleSFX: {fileID: 8300000, guid: a5787aedf9338894c9a5c9565810972a, type: 3}
   startSFX: {fileID: 8300000, guid: c06fb2f1314e8ed47a24c3146bbef480, type: 3}
-  SFXVolume: 0.4
 --- !u!114 &6473387382223587294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,17 +71,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2476c924b1042547b2772db9a5e4dae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7117830785220462194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6473387382223587291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42f017852fed9004c8452b5080ee1e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -712,19 +712,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1856682415 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1729056378860069979, guid: aa41d2bca2bcef340b50dcccd54212d5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1729056378993176700}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1856682416 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1729056378860069972, guid: aa41d2bca2bcef340b50dcccd54212d5,
     type: 3}
   m_PrefabInstance: {fileID: 1729056378993176700}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856682415}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b87bd33f381a0fa41ad9cb6ebc6a9191, type: 3}
@@ -2199,11 +2193,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameState
       objectReference: {fileID: 0}
-    - target: {fileID: 6473387382223587291, guid: cd94582e92888024cbdc555587926c3b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6473387382223587292, guid: cd94582e92888024cbdc555587926c3b,
         type: 3}
       propertyPath: player
@@ -2214,11 +2203,6 @@ PrefabInstance:
       propertyPath: endScreen
       value: 
       objectReference: {fileID: 1458377018}
-    - target: {fileID: 6473387382223587292, guid: cd94582e92888024cbdc555587926c3b,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6473387382223587292, guid: cd94582e92888024cbdc555587926c3b,
         type: 3}
       propertyPath: gameScreen
@@ -2254,21 +2238,6 @@ PrefabInstance:
       propertyPath: obstacleSpawner
       value: 
       objectReference: {fileID: 1512732438}
-    - target: {fileID: 6473387382223587292, guid: cd94582e92888024cbdc555587926c3b,
-        type: 3}
-      propertyPath: gameElements.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473387382223587292, guid: cd94582e92888024cbdc555587926c3b,
-        type: 3}
-      propertyPath: gameElements.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473387382223587292, guid: cd94582e92888024cbdc555587926c3b,
-        type: 3}
-      propertyPath: gameElements.Array.data[1]
-      value: 
-      objectReference: {fileID: 1856682415}
     - target: {fileID: 6473387382223587293, guid: cd94582e92888024cbdc555587926c3b,
         type: 3}
       propertyPath: m_RootOrder
