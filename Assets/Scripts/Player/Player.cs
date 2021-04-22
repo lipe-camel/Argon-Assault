@@ -89,6 +89,8 @@ public class Player : MonoBehaviour
 
     internal void Spawn()
     {
+        if (isAlive) { return; }
+
         gameObject.SetActive(true);
         GetCachedReferences();
         StartCustomStarts();
