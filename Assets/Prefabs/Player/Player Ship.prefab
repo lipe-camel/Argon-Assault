@@ -300,7 +300,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xValue: 30
   yValue: 18
-  movementSpeed: 100
+  menuPos: {x: 0, y: -18, z: 0}
+  movementSpeed: 107
   positionPitchFactor: 0
   positionYawFactor: 0
   controlPitchFactor: -25

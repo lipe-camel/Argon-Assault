@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 571159455327327255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.52}
   m_Children:
   - {fileID: 8535952237560328846}
   - {fileID: 571159456245003002}
@@ -92,7 +92,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 1000, z: 1000}
+  m_Size: {x: 10, y: 1000, z: 2000}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &571159456245003003
 GameObject:
@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571159456245003003}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -500}
+  m_LocalPosition: {x: 0, y: 0, z: -1000}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 571159455327327254}
@@ -206,7 +206,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1000, y: 10, z: 1000}
+  m_Size: {x: 1000, y: 10, z: 2000}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &571159456684461923
 GameObject:
@@ -234,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571159456684461923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 500}
+  m_LocalPosition: {x: 0, y: 0, z: 1000}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 571159455327327254}
@@ -320,7 +320,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 1000, z: 1000}
+  m_Size: {x: 10, y: 1000, z: 2000}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1363567331356753309
 GameObject:
@@ -347,7 +347,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363567331356753309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 515}
+  m_LocalPosition: {x: 0, y: 0, z: 1015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 571159455327327254}
@@ -421,5 +421,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1000, y: 10, z: 1000}
+  m_Size: {x: 1000, y: 10, z: 2000}
   m_Center: {x: 0, y: 0, z: 0}

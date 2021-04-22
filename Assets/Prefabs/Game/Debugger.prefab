@@ -43,3 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1f84534a60e7c408e94010804366c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebuggerNotes: '"G" Toggles the player collisions;
+
+    "K" Kills the player;
+
+    "L"
+    Fills the player''s life;
+
+    "J" Turns the obstacles indestructible;
+
+    "B"
+    Destroy all current objects.'

@@ -149,18 +149,18 @@ AudioReverbFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4918079676224426961}
   m_Enabled: 0
-  m_DryLevel: -4494
+  m_DryLevel: -1873
   m_Room: 0
-  m_RoomHF: -1139
-  m_DecayTime: 3.2
-  m_DecayHFRatio: 0.32
-  m_ReflectionsLevel: -7703
-  m_ReverbLevel: 228
+  m_RoomHF: -749
+  m_DecayTime: 0.1
+  m_DecayHFRatio: 0.77
+  m_ReflectionsLevel: -10000
+  m_ReverbLevel: 0
   m_ReverbDelay: 0.04
-  m_Diffusion: 79.7
+  m_Diffusion: 100
   m_Density: 100
   m_HFReference: 5000
   m_RoomLF: 0
   m_LFReference: 250
-  m_ReflectionsDelay: 0.143
+  m_ReflectionsDelay: 0
   m_ReverbPreset: 27
